@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://https://mariohevia.github.io/EC-Theory-UoB/al-folio/sitemap.xml
+Sitemap: https://https://mariohevia.github.io//EC-Theory-UoB/sitemap.xml
