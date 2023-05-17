@@ -27,6 +27,7 @@ jobs:
       with:
         python-version: '3.9.7' 
         cache: 'pip'
+    - name: Install Python Libraries
       run: pip install -r _bibliography/requirements.txt
     - name: Run Python Script
       run: python _bibliography/zotjek.py
