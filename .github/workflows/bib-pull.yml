@@ -23,7 +23,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Python Script
-      run: python _bibliography/zotjek.py
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10' 
+        cache: 'pip'
+    - run: pip install -r _bibliography/requirements.txt
+    - run: python _bibliography/zotjek.py
       shell: sh
   deploy:
     needs: zoteropull

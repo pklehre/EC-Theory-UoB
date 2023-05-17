@@ -1,0 +1,3 @@
+# Requirements needed to run zotjek.py
+
+pyzotero == 1.5.9 
