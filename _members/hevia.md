@@ -8,7 +8,7 @@ team_frontpage: true
 title: Dr. Mario A. Hevia Fajardo
 description: Profile of Dr. Mario A. Hevia Fajardo, Postdoctoral Researcher.
 lastname: Hevia Fajardo
-publications: 'author^=*Hevia'
+publications: 'author^=*Mario'
 
 teaser: >
     I am a Research Fellow in the Theory Group at the University of Birmingham in the School of Computer Science. 

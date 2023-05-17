@@ -71,6 +71,14 @@ layout: default
 
             </div>
           {%- endif %}
+
+          <!-- Publications in members -->
+          {% if page.publications %}
+          <h2 id="publications">Publications</h2>
+          <div class="publications">
+            {% bibliography -f references -q @*[{{page.publications}}]* %}
+          </div>
+  {% endif %}
         </article>
 
 </div>
