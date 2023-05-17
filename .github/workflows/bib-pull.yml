@@ -31,6 +31,11 @@ jobs:
       run: pip install -r _bibliography/requirements.txt
     - name: Run Python Script
       run: python _bibliography/zotjek.py
+    - name: Commit and push changes
+      run: |
+        git add -A
+        git commit -m "Changed bib file to match Zotero"
+        git push
   deploy:
     needs: zoteropull
     runs-on: ubuntu-latest
