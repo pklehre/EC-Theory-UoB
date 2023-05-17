@@ -1,9 +1,17 @@
-name: deploy
+name: Zotero update
 
 on:
   schedule:
-    # * is a special character in YAML so you have to quote this string
     - cron:  '0 9,17 * * *'
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+    branches:
+      - master
+      - main
+  workflow_dispatch:
 
 permissions:
   contents: write
