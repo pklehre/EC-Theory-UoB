@@ -20,6 +20,19 @@ for bib in zot_db:
         str_bib.insert(-2, " bibtex_show = {true},")
     str_bibs += '\n'.join(str_bib)+'\n'
 
+str_bibs = str_bibs.split('\n')
+ids = []
+for i, line in enumerate(str_bibs):
+    if '@' in line:
+        if line in ids:
+            new_line = line[:-1]+'_'+str(i)+','
+            str_bibs[i] = new_line
+            ids.append(new_line)
+        else:
+            ids.append(line)
+
+str_bibs = '\n'.join(str_bibs)
+
 with open('_bibliography/references.bib','w') as bibtex_file:
     bibtex_file.write(str_bibs)
 
