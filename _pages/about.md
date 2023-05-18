@@ -14,7 +14,7 @@ profile:
     <p>Edgbaston</p>
     <p>Birmingham</p>
     <p>B15 2TT</p>
-    <p>UK</p>
+    <p>United Kingdom</p>
 
 news: false  # includes a list of news items
 latest_posts: false  # includes a list of the newest posts
