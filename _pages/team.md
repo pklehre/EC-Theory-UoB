@@ -21,13 +21,13 @@ nav_rank: 2
             </div>
             <div class="team col-sm-8 col-md-9">
                 <div class="card-body">
-                    {% if member.inline == false %}<a href="{{ member.url | relative_url }}">{% endif %}
+                    {% if member.profile.website %}<a href="{{ member.profile.website }}">{% endif %}
                     <h5 class="card-title">{{ member.profile.name }}</h5>
                     {% if member.profile.position %}<h6 class="card-subtitle mb-2 text-muted">{{ member.profile.position }}</h6>{% endif %}
                     <p class="card-text">
                         {{ member.teaser }}
                     </p>
-                    {% if member.inline == false %}</a>{% endif %}
+                    {% if member.profile.website %}</a>{% endif %}
                     {% if member.profile.email %}
                         <a href="mailto:{{ member.profile.email }}" class="card-link"><i class="fas fa-envelope"></i></a>
                     {% endif %}

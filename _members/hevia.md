@@ -16,6 +16,7 @@ teaser: >
     Currently I am working on the analysis of competitive co-evolutionary algorithms.
 
 profile:
+    website: https://mariohevia.github.io/
     name: Dr. Mario A. Hevia Fajardo
     align: right
     image: hevia-profile.jpg

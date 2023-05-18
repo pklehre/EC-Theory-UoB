@@ -35,14 +35,14 @@ Test
         {% assign colIdMod4 = forloop.index | modulo: 4 %}
         {% if colsMod6 == 1 and colIdMod4 == 1 %}<div class="col-md-2 w-100"></div>{% endif %}
         <div class="col-6 col-sm-3 col-md-2 mb-3">
-            <a href="{{ member.url | relative_url }}" class="no-decoration">
+            {% if member.profile.website %}<a href="{{ member.profile.website }}" class="no-decoration">{% endif %}
                 <div class="card hoverable h-100 m-2">
                     <img src="{{ '/assets/img/' | append: member.profile.image | relative_url }}" class="card-img-top" alt="{{ member.profile.name }}" />
                     <div class="card-body p-2">
                         <div class="card-title m-0">{{ member.title }}</div>
                     </div>
                 </div>
-            </a>
+            {% if member.profile.website %}</a>{% endif %}
         </div>
     {% endfor %}
 </div>
