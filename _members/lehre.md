@@ -11,7 +11,7 @@ lastname: Lehre
 publications: 'author^=*Lehre'
 
 teaser: >
-    Teaser
+    Per Kristian Lehre is Professor of Evolutionary Computation in the School of Computer Science at the University of Birmingham.
 
 profile:
     name: Prof. Per Kristian Lehre
@@ -29,8 +29,11 @@ profile:
         Birmingham, UK
 ---
 
-Some things you want to add.
-
 ## Short Bio
 
-Short Bio.
+
+Per Kristian Lehre is a Professor of Evolutionary Computation in the
+School of Computer Science at the University of Birmingham (since Jan
+2017). He obtained MSc and PhD degrees in Computer Science from the
+Norwegian University of Science and Technology (NTNU) in Trondheim.
+He is funded by a Turing AI Acceleration Fellowship from UKRI.
