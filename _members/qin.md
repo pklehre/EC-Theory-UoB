@@ -1,7 +1,7 @@
 ---
 layout: about
 inline: false
-group: PhD Researchs
+group: PhD Researcher
 group_rank: 4
 team_frontpage: true
 
@@ -18,7 +18,7 @@ profile:
     name: Xiaoyu Qin
     position: PhD student
     align: right
-    image: qin-profile
+    image: qin-profile.jpg
     email:
     twitter: XySQin
     github: 
