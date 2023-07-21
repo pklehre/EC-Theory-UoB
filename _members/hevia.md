@@ -11,9 +11,9 @@ lastname: Hevia Fajardo
 publications: 'author^=*Mario'
 
 teaser: >
-    I am a Research Fellow in the Theory Group at the University of Birmingham in the School of Computer Science. 
-    My main research interests are in theory of evolutionary computation and randomized search heuristics. 
-    Currently I am working on the analysis of competitive co-evolutionary algorithms.
+    Mario Hevia Fajardo is a Research Fellow in the Theory Group at the University of Birmingham in the School of Computer Science. 
+    His main research interests are in theory of evolutionary computation and randomized search heuristics. 
+    Currently he is working on the analysis of competitive co-evolutionary algorithms.
 
 profile:
     website: https://mariohevia.github.io/
