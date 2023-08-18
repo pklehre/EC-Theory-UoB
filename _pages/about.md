@@ -5,9 +5,7 @@ permalink: /
 subtitle: 
 
 profile:
-  align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  align: bottom
   address: >
     <p>School of Computer Science</p>
     <p>University of Birmingham</p>
@@ -22,6 +20,8 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 
+![GECCO 2023 in Lisbon](assets/img/group-picture-lisbon-small.jpg){: width="1024" }
+
 We do fundamental research in the theory of optimisation, particularly
 evolutionary computation. Our research methodology is based on
 rigorous mathematical analysis of evolutionary processes, and the
@@ -35,22 +35,22 @@ realistic evolutionary algorithms, including
  - [The level-based theorem](https://ieeexplore.ieee.org/document/8039236) (upper bounds)
  - The negative drift theorem for populations (lower bounds)
 
-Runtime bounds are important because they give us insights into how
-the performance of evolutionary algorithms depends on the structure of
-optmisation problems and the parameter settings of the algorithm. This
-insight has aided us in developing better algorithms for challenging
-optimisation scenarios, such as 
+Runtime bounds give insight into how the performance of evolutionary
+algorithms depends on the structure of optmisation problems and the
+parameter settings of the algorithm. This insight has aided us in
+developing better algorithms for challenging optimisation scenarios,
+such as
 
  - [PDCoEA](https://dl.acm.org/doi/abs/10.1145/3512290.3528853) (a population-based co-evolutionary algorithm for adversarial
    optimisation problems)
  - [MOSA-EA](https://github.com/ChengCheng-Qin/mosa-ea) (a self-adaptive
    algorithm for single-objective, pseudo-Boolean optimisation)
 
-We have received funding from the European Commission, and UKRI/EPSRC
+Our research has been funded by the European Commission, and UKRI/EPSRC
 through a [Turing AI Acceleration
 Fellowship](https://www.gov.uk/government/publications/turing-artificial-intelligence-fellowships/turing-artificial-intelligence-fellowships).
 
-{% assign members = site.members | where: "team_frontpage", true | sort: "lastname" %}
+
 
 
 <div class="d-flex flex-wrap align-content-stretch justify-content-center m-n2 pt-5 no-gutters">
