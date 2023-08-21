@@ -5,7 +5,7 @@ permalink: /
 subtitle: 
 
 profile:
-  align: bottom
+  align: right
   address: >
     <p>School of Computer Science</p>
     <p>University of Birmingham</p>
@@ -20,7 +20,8 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 
-![GECCO 2023 in Lisbon](assets/img/group-picture-lisbon-small.jpg){: width="1024" }
+{: style="text-align:center"}
+![GECCO 2023 in Lisbon](assets/img/group-picture-lisbon-small.jpg){: width="800" .rounded}
 
 We do fundamental research in the theory of optimisation, particularly
 evolutionary computation. Our research methodology is based on
