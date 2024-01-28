@@ -1,3 +1,20 @@
+@article{lehre_more_2024,
+ abstract = {Real-world applications often involve “uncertain” objectives, i.e., where optimisation algorithms observe objective values as a random variables with positive variance. In the past decade, several rigorous analysis results for evolutionary algorithms (EAs) on discrete problems show that EAs can cope with low-level uncertainties, i.e. when the variance of the uncertain objective value is small, and sometimes even benefit from uncertainty. Previous work showed that a large population combined with a non-elitist selection mechanism is a promising approach to handle high levels of uncertainty. However, the population size and the mutation rate can dramatically impact the performance of non-elitist EAs, and the optimal choices of these parameters depend on the level of uncertainty in the objective function. The performance and the required parameter settings for non-elitist EAs in some common objective-uncertainty scenarios are still unknown. We analyse the runtime of non-elitist EAs on two classical benchmark problems OneMax and LeadingOnes in in the one-bit, the bitwise, the Gaussian, and the symmetric noise models, and the dynamic binary value problem (DynBV). Our analyses are more extensive and precise than previous analyses of non-elitist EAs. In several settings, we prove that the non-elitist EAs outperform the current state-of-the-art results. Furthermore, we provide more precise guidance on how to choose the mutation rate, the selective pressure, and the population size as a function of the level of uncertainty.},
+ author = {Lehre, Per Kristian and Qin, Xiaoyu},
+ doi = {10.1007/s00453-022-01044-5},
+ issn = {1432-0541},
+ journal = {Algorithmica},
+ month = {February},
+ note = {},
+ number = {2},
+ pages = {396--441},
+ title = {More {Precise} {Runtime} {Analyses} of {Non}-elitist {Evolutionary} {Algorithms} in {Uncertain} {Environments}},
+ url = {https://doi.org/10.1007/s00453-022-01044-5},
+ volume = {86},
+ year = {2024},
+ bibtex_show = {true},
+}
+
 @article{hevia_fajardo_self-adjusting_2023,
  abstract = {Evolutionary algorithms (EAs) are general-purpose optimisers that come with several parameters like the sizes of parent and offspring populations or the mutation rate. It is well known that the performance of EAs may depend drastically on these parameters. Recent theoretical studies have shown that self-adjusting parameter control mechanisms that tune parameters during the algorithm run can provably outperform the best static parameters in EAs on discrete problems. However, the majority of these studies concerned elitist EAs and we do not have a clear answer on whether the same mechanisms can be applied for non-elitist EAs. We study one of the best-known parameter control mechanisms, the one-fifth success rule, to control the offspring population size \$\${\textbackslash}lambda \$\$in the non-elitist \$\$\{(1,{\textbackslash}lambda )\}\$\$ EA. It is known that the \$\$\{(1,{\textbackslash}lambda )\}\$\$ EA has a sharp threshold with respect to the choice of \$\${\textbackslash}lambda \$\$where the expected runtime on the benchmark function OneMax changes from polynomial to exponential time. Hence, it is not clear whether parameter control mechanisms are able to find and maintain suitable values of \$\${\textbackslash}lambda \$\$. For OneMax we show that the answer crucially depends on the success rate s (i. e. a one-\$\$(s+1)\$\$-th success rule). We prove that, if the success rate is appropriately small, the self-adjusting \$\$\{(1,{\textbackslash}lambda )\}\$\$ EA optimises OneMax in O(n) expected generations and \$\$O(n {\textbackslash}log n)\$\$expected evaluations, the best possible runtime for any unary unbiased black-box algorithm. A small success rate is crucial: we also show that if the success rate is too large, the algorithm has an exponential runtime on OneMax and other functions with similar characteristics.},
  author = {Hevia Fajardo, Mario Alejandro and Sudholt, Dirk},
@@ -90,7 +107,7 @@
  bibtex_show = {true},
 }
 
-@inproceedings{lehre_self-adaptation_2023_92,
+@inproceedings{lehre_self-adaptation_2023_109,
  author = {Lehre, Per Kristian and Qin, Xiaoyu},
  booktitle = {Proceedings of the {Genetic} and {Evolutionary} {Computation} {Conference}},
  copyright = {All rights reserved},
@@ -101,20 +118,6 @@
  series = {{GECCO} '23},
  title = {Self-{Adaptation} {Can} {Help} {Evolutionary} {Algorithms} {Track} {Dynamic} {Optima}},
  year = {2023},
- bibtex_show = {true},
-}
-
-@article{lehre_more_2022,
- abstract = {Real-world applications often involve “uncertain” objectives, i.e., where optimisation algorithms observe objective values as a random variables with positive variance. In the past decade, several rigorous analysis results for evolutionary algorithms (EAs) on discrete problems show that EAs can cope with low-level uncertainties, i.e. when the variance of the uncertain objective value is small, and sometimes even benefit from uncertainty. Previous work showed that a large population combined with a non-elitist selection mechanism is a promising approach to handle high levels of uncertainty. However, the population size and the mutation rate can dramatically impact the performance of non-elitist EAs, and the optimal choices of these parameters depend on the level of uncertainty in the objective function. The performance and the required parameter settings for non-elitist EAs in some common objective-uncertainty scenarios are still unknown. We analyse the runtime of non-elitist EAs on two classical benchmark problems OneMax and LeadingOnes in in the one-bit, the bitwise, the Gaussian, and the symmetric noise models, and the dynamic binary value problem (DynBV). Our analyses are more extensive and precise than previous analyses of non-elitist EAs. In several settings, we prove that the non-elitist EAs outperform the current state-of-the-art results. Furthermore, we provide more precise guidance on how to choose the mutation rate, the selective pressure, and the population size as a function of the level of uncertainty.},
- author = {Lehre, Per Kristian and Qin, Xiaoyu},
- doi = {10.1007/s00453-022-01044-5},
- issn = {1432-0541},
- journal = {Algorithmica},
- month = {October},
- note = {},
- title = {More {Precise} {Runtime} {Analyses} of {Non}-elitist {Evolutionary} {Algorithms} in {Uncertain} {Environments}},
- url = {https://doi.org/10.1007/s00453-022-01044-5},
- year = {2022},
  bibtex_show = {true},
 }
 
@@ -231,7 +234,7 @@ talk = {https://vimeo.com/723767059},
  bibtex_show = {true},
 }
 
-@inproceedings{hevia_fajardo_self-adjusting_2021_233,
+@inproceedings{hevia_fajardo_self-adjusting_2021_236,
  abstract = {Recent theoretical studies have shown that self-adjusting mechanisms can provably outperform the best static parameters in evolutionary algorithms on discrete problems. However, the majority of these studies concerned elitist algorithms and we do not have a clear answer on whether the same mechanisms can be applied for non-elitist algorithms. We study one of the best-known parameter control mechanisms, the one-fifth success rule, to control the offspring population size λ in the non-elitist (1, λ) EA. It is known that the (1, λ) EA has a sharp threshold with respect to the choice of λ where the runtime on OneMax changes from polynomial to exponential time. Hence, it is not clear whether parameter control mechanisms are able to find and maintain suitable values of λ. We show that the answer crucially depends on the success rate s (i. e. a one-(s + 1)-th success rule). We prove that, if the success rate is appropriately small, the self-adjusting (1, λ) EA optimises OneMax in O(n) expected generations and O(n log n) expected evaluations. A small success rate is crucial: we also show that if the success rate is too large, the algorithm has an exponential runtime on OneMax.},
  address = {New York, NY, USA},
  author = {Hevia Fajardo, Mario Alejandro and Sudholt, Dirk},
