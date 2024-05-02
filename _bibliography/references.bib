@@ -15,6 +15,45 @@
  bibtex_show = {true},
 }
 
+@incollection{hevia_fajardo_analysis_2024,
+ abstract = {Competitive coevolutionary algorithms are used to model adversarial dynamics. The diversity of the adversarial populations can be changed with a spatial topology. To achieve more clarity in how a spatial topology impacts performance and complexity we introduce a spatial topology to a pairwise dominance coevolutionary algorithm named PDCoEA. The new algorithm is called STPDCoEA. We use a methodology for consistent algorithm comparison to empirically study the impact of topology, problem, and mutation rates on the dynamics and payoffs in STPDCoEA. We compare records of multi-run dynamics on three problems and observe that the spatial topology impacts the performance and diversity.},
+ address = {Singapore},
+ author = {Hevia Fajardo, Mario and Lehre, Per Kristian and Toutouh, Jamal and Hemberg, Erik and O’Reilly, Una-May},
+ booktitle = {Genetic {Programming} {Theory} and {Practice} {XX}},
+ editor = {Winkler, Stephan and Trujillo, Leonardo and Ofria, Charles and Hu, Ting},
+ isbn = {978-981-9984-13-8},
+ language = {en},
+ note = {},
+ pages = {19--44},
+ publisher = {Springer Nature},
+ title = {Analysis of a {Pairwise} {Dominance} {Coevolutionary} {Algorithm} with {Spatial} {Topology}},
+ url = {https://doi.org/10.1007/978-981-99-8413-8_2},
+ urldate = {2024-05-02},
+ year = {2024},
+ bibtex_show = {true},
+}
+
+@inproceedings{hevia_fajardo_runtime_2023,
+ abstract = {Co-evolutionary algorithms have found several applications in game-theoretic applications and optimisation problems with an adversary, particularly where the strategy space is discrete and exponentially large, and where classical game-theoretic methods fail. However, the application of co-evolutionary algorithms is difficult because they often display pathological behaviour, such as cyclic behaviour and evolutionary forgetting. These challenges have prevented the broad application of co-evolutionary algorithms. We derive, via rigorous mathematical methods, bounds on the expected time of a simple co-evolutionary algorithm until it discovers a Maximin-solution on the pseudo-Boolean Bilinear problem. Despite the intransitive nature of the problem leading to a cyclic behaviour of the algorithm, we prove that the algorithm obtains the Maximin-solution in expected O(n1.5) time. However, we also show that the algorithm quickly forgets the Maximin-solution and moves away from it. These results in a large total regret of Θ(Tn1.5) after T iterations. Finally, we show that using a simple archive solves this problem reducing the total regret significantly. Along the way, we present new mathematical tools to compute the expected time for co-evolutionary algorithms to obtain a Maximin-solution. We are confident that these tools can help further advance runtime analysis in both co-evolutionary and evolutionary algorithms.},
+ address = {New York, NY, USA},
+ author = {Hevia Fajardo, Mario Alejandro and Lehre, Per Kristian and Lin, Shishen},
+ booktitle = {Proceedings of the 17th {ACM}/{SIGEVO} {Conference} on {Foundations} of {Genetic} {Algorithms}},
+ doi = {10.1145/3594805.3607132},
+ isbn = {9798400702020},
+ keywords = {Competitive coevolution, Maximin Optimisation, Runtime analysis},
+ month = {August},
+ note = {},
+ pages = {73--83},
+ publisher = {Association for Computing Machinery},
+ series = {{FOGA} '23},
+ shorttitle = {Runtime {Analysis} of a {Co}-{Evolutionary} {Algorithm}},
+ title = {Runtime {Analysis} of a {Co}-{Evolutionary} {Algorithm}: {Overcoming} {Negative} {Drift} in {Maximin}-{Optimisation}},
+ url = {https://dl.acm.org/doi/10.1145/3594805.3607132},
+ urldate = {2024-05-02},
+ year = {2023},
+ bibtex_show = {true},
+}
+
 @article{hevia_fajardo_self-adjusting_2023,
  abstract = {Evolutionary algorithms (EAs) are general-purpose optimisers that come with several parameters like the sizes of parent and offspring populations or the mutation rate. It is well known that the performance of EAs may depend drastically on these parameters. Recent theoretical studies have shown that self-adjusting parameter control mechanisms that tune parameters during the algorithm run can provably outperform the best static parameters in EAs on discrete problems. However, the majority of these studies concerned elitist EAs and we do not have a clear answer on whether the same mechanisms can be applied for non-elitist EAs. We study one of the best-known parameter control mechanisms, the one-fifth success rule, to control the offspring population size \$\${\textbackslash}lambda \$\$in the non-elitist \$\$\{(1,{\textbackslash}lambda )\}\$\$ EA. It is known that the \$\$\{(1,{\textbackslash}lambda )\}\$\$ EA has a sharp threshold with respect to the choice of \$\${\textbackslash}lambda \$\$where the expected runtime on the benchmark function OneMax changes from polynomial to exponential time. Hence, it is not clear whether parameter control mechanisms are able to find and maintain suitable values of \$\${\textbackslash}lambda \$\$. For OneMax we show that the answer crucially depends on the success rate s (i. e. a one-\$\$(s+1)\$\$-th success rule). We prove that, if the success rate is appropriately small, the self-adjusting \$\$\{(1,{\textbackslash}lambda )\}\$\$ EA optimises OneMax in O(n) expected generations and \$\$O(n {\textbackslash}log n)\$\$expected evaluations, the best possible runtime for any unary unbiased black-box algorithm. A small success rate is crucial: we also show that if the success rate is too large, the algorithm has an exponential runtime on OneMax and other functions with similar characteristics.},
  author = {Hevia Fajardo, Mario Alejandro and Sudholt, Dirk},
@@ -73,6 +112,22 @@
  bibtex_show = {true},
 }
 
+@inproceedings{lehre_is_2023,
+ abstract = {Many Real-world optimisation tasks are increasingly large-scale optimisation (LSO) problems. Cooperative co-evolutionary algorithms (CoEAs), which involve more than two populations and utilise the divide-and-conquer approach, have been introduced to solve LSO problems more efficiently. However, the behaviour of cooperative CoEAs is not fully understood because the interactions between two or more populations make analysis challenging. Runtime analysis has improved the under-standing of traditional EAs. We argue that using runtime analysis of CoEAs could provide helpful insights, e.g., how their expected runtime depends on alaorithmic design decisions. In this paper, we show that the expected optimisation time of the basic cooperative co-evolutionary (1+1) EA (CC-(1+1) EA) on linear functions is {\textbackslash}Theta(nłog n). This solves an open conjecture by (Jansen and Wiegand, 2004). Moreover, empirical analysis is conducted on two more complicated problems: NK − LANDSCAPE and k-MAXSAT problems. Our results show that the CC-(1+1) EA perform similarly to the (1+1) EA on these problems. However, adjusting block length allows us to optimise its performance on the NK − LANDSCAPE problem. Our results provide a more precise bound for the expected runtime of CC-(1+1) EA and a more detailed empirical analysis of its behaviour on more complicated inseparable problems.},
+ author = {Lehre, Per Kristian and Lin, Shishen},
+ booktitle = {2023 {IEEE} {Congress} on {Evolutionary} {Computation} ({CEC})},
+ doi = {10.1109/CEC53210.2023.10254149},
+ keywords = {Benchmark testing, Concentration Inequality, Cooperative Co-Evolutionary Algorithms, Evolutionary computation, Large-scale Optimisation, Partitioning algorithms, Runtime, Runtime Analysis, Sociology, Statistics, Tail},
+ month = {July},
+ note = {},
+ pages = {1--9},
+ title = {Is {CC}-(1+1) {EA} {More} {Efficient} than (1+1) {EA} on {Separable} and {Inseparable} {Problems}?},
+ url = {https://ieeexplore.ieee.org/document/10254149},
+ urldate = {2024-05-02},
+ year = {2023},
+ bibtex_show = {true},
+}
+
 @article{hevia_fajardo_theoretical_2023,
  abstract = {The self-adjusting (1 + (λ, λ)) GA is the best known genetic algorithm for problems with a good fitness-distance correlation as in OneMax. It uses a parameter control mechanism for the parameter λ that governs the mutation strength and the number of offspring. However, on multimodal problems, the parameter control mechanism tends to increase λ uncontrollably. We study this problem for the standard Jumpk benchmark problem class using runtime analysis. The self-adjusting (1 + (λ, λ)) GA behaves like a (1 + n) EA whenever the maximum value for λ is reached. This is ineffective for problems where large jumps are required. Capping λ at smaller values is beneficial for such problems. Finally, resetting λ to 1 allows the parameter to cycle through the parameter space. We show that resets are effective for all Jumpk problems: the self-adjusting (1 + (λ, λ)) GA performs as well as the (1 + 1) EA with the optimal mutation rate and evolutionary algorithms with heavy-tailed mutation, apart from a small polynomial overhead. Along the way, we present new general methods for translating existing runtime bounds from the (1 + 1) EA to the self-adjusting (1 + (λ, λ)) GA. We also show that the algorithm presents a bimodal parameter landscape with respect to λ on Jumpk. For appropriate n and k, the landscape features a local optimum in a wide basin of attraction and a global optimum in a narrow basin of attraction. To our knowledge this is the first proof of a bimodal parameter landscape for the runtime of an evolutionary algorithm on a multimodal problem.},
  author = {Hevia Fajardo, Mario Alejandro and Sudholt, Dirk},
@@ -107,7 +162,7 @@
  bibtex_show = {true},
 }
 
-@inproceedings{lehre_self-adaptation_2023_109,
+@inproceedings{lehre_self-adaptation_2023_164,
  author = {Lehre, Per Kristian and Qin, Xiaoyu},
  booktitle = {Proceedings of the {Genetic} and {Evolutionary} {Computation} {Conference}},
  copyright = {All rights reserved},
@@ -234,7 +289,7 @@ talk = {https://vimeo.com/723767059},
  bibtex_show = {true},
 }
 
-@inproceedings{hevia_fajardo_self-adjusting_2021_236,
+@inproceedings{hevia_fajardo_self-adjusting_2021_291,
  abstract = {Recent theoretical studies have shown that self-adjusting mechanisms can provably outperform the best static parameters in evolutionary algorithms on discrete problems. However, the majority of these studies concerned elitist algorithms and we do not have a clear answer on whether the same mechanisms can be applied for non-elitist algorithms. We study one of the best-known parameter control mechanisms, the one-fifth success rule, to control the offspring population size λ in the non-elitist (1, λ) EA. It is known that the (1, λ) EA has a sharp threshold with respect to the choice of λ where the runtime on OneMax changes from polynomial to exponential time. Hence, it is not clear whether parameter control mechanisms are able to find and maintain suitable values of λ. We show that the answer crucially depends on the success rate s (i. e. a one-(s + 1)-th success rule). We prove that, if the success rate is appropriately small, the self-adjusting (1, λ) EA optimises OneMax in O(n) expected generations and O(n log n) expected evaluations. A small success rate is crucial: we also show that if the success rate is too large, the algorithm has an exponential runtime on OneMax.},
  address = {New York, NY, USA},
  author = {Hevia Fajardo, Mario Alejandro and Sudholt, Dirk},
