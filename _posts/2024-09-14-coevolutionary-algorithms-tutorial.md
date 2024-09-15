@@ -61,51 +61,82 @@ _styles: >
 
 ### PDCoEA
 
+<a href="{{ '/assets/plotly/pdcoea_animation.html' | relative_url }}" target="pdcoea">
+  <button>Load Animation</button>
+</a>
 
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe src="{{ '/assets/plotly/pdcoea_animation.html' | relative_url }}" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
+  <iframe name="pdcoea" src="about:blank" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 ### RankDiv CoEA
 
+<a href="{{ '/assets/plotly/rankdivcoea_animation.html' | relative_url }}" target="rankdivcoea_animation">
+  <button>Load Animation</button>
+</a>
+
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe src="{{ '/assets/plotly/rankdivcoea_animation.html' | relative_url }}" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
+  <iframe name="rankdivcoea_animation" src="about:blank" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 ### (1,λ) CoEA with average fitness aggregation
 
+<a href="{{ '/assets/plotly/onecommalambdaavg.html' | relative_url }}" target="onecommalambdaavg">
+  <button>Load Animation</button>
+</a>
+
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe src="{{ '/assets/plotly/onecommalambdaavg.html' | relative_url }}" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
+  <iframe name="onecommalambdaavg" src="about:blank" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 ### (1,λ) CoEA with worst case fitness aggregation
 
+<a href="{{ '/assets/plotly/onecommalambdaworst.html' | relative_url }}" target="onecommalambdaworst">
+  <button>Load Animation</button>
+</a>
+
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe src="{{ '/assets/plotly/onecommalambdaworst.html' | relative_url }}" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
+  <iframe name="onecommalambdaworst" src="about:blank" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 ### (1+1) RLS-PDCoEA 
 
+<a href="{{ '/assets/plotly/rlspd.html' | relative_url }}" target="rlspd">
+  <button>Load Animation</button>
+</a>
+
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe src="{{ '/assets/plotly/rlspd.html' | relative_url }}" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
+  <iframe name="rlspd" src="about:blank" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 ## Diagonal
 
 ### IPCA
 
+<a href="{{ '/assets/plotly/ipcadiagonal.html' | relative_url }}" target="ipcadiagonal">
+  <button>Load Animation</button>
+</a>
+
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe src="{{ '/assets/plotly/ipcadiagonal.html' | relative_url }}" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
+  <iframe name="ipcadiagonal" src="about:blank" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 ### (1,λ) CoEA with average fitness aggregation
 
+<a href="{{ '/assets/plotly/onecommalambdaavgdiagonal.html' | relative_url }}" target="onecommalambdaavgdiagonal">
+  <button>Load Animation</button>
+</a>
+
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe src="{{ '/assets/plotly/onecommalambdaavgdiagonal.html' | relative_url }}" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
+  <iframe name="onecommalambdaavgdiagonal" src="about:blank" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 ### (1+1) RLS-PDCoEA 
 
+<a href="{{ '/assets/plotly/rlspddiagonal.html' | relative_url }}" target="rlspddiagonal">
+  <button>Load Animation</button>
+</a>
+
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe src="{{ '/assets/plotly/rlspddiagonal.html' | relative_url }}" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
+  <iframe name="rlspddiagonal" src="about:blank" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
 </div>
