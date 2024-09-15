@@ -81,8 +81,11 @@ _styles: >
 
 ## Diagonal
 
-<a href="{{ '/assets/plotly/ipcadiagonal.html' | relative_url }}" target="ipcaDiagonaldiagonal">
+<a href="{{ '/assets/plotly/ipcadiagonal.html' | relative_url }}" target="Diagonal">
   <button class="styled-button">IPCA</button>
+</a>
+<a href="{{ '/assets/plotly/pdcoeadiagonal.html' | relative_url }}" target="Diagonal">
+  <button class="styled-button">PDCoEA</button>
 </a>
 <a href="{{ '/assets/plotly/onecommalambdaavgdiagonal.html' | relative_url }}" target="Diagonal">
   <button class="styled-button">(1,λ) CoEA with average fitness aggregation</button>
@@ -92,7 +95,7 @@ _styles: >
 </a>
 
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe name="ipcadiagonal" src="about:blank" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
+  <iframe name="Diagonal" src="about:blank" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 
