@@ -55,6 +55,10 @@ _styles: >
 
 ---
 
+![PDCoEA](/assets/img/pdcoea-pseudocode.png)
+![RankDivCoEA](/assets/img/rankdivcoea-pseudocode.png)
+![IPCA](/assets/img/ipca-pseudocode.png)
+
 *** 
 
 ## Bilinear
