@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://pklehre.github.io//EC-Theory-UoB/feed.xml" rel="self" type="application/atom+xml" /><link href="https://pklehre.github.io//EC-Theory-UoB/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-09-15T10:23:43+00:00</updated><id>https://pklehre.github.io//EC-Theory-UoB/feed.xml</id><title type="html">Theory of Evolutionary Computation UoB</title><subtitle>Website for the Theory of Evolutionary Computation group at the University of Birmingham 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://pklehre.github.io//EC-Theory-UoB/feed.xml" rel="self" type="application/atom+xml" /><link href="https://pklehre.github.io//EC-Theory-UoB/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-09-15T11:45:48+00:00</updated><id>https://pklehre.github.io//EC-Theory-UoB/feed.xml</id><title type="html">Theory of Evolutionary Computation UoB</title><subtitle>Website for the Theory of Evolutionary Computation group at the University of Birmingham 
 </subtitle><entry><title type="html">Coevolutionary algorithms (simulations on two benchmark problems)</title><link href="https://pklehre.github.io//EC-Theory-UoB/blog/2024/coevolutionary-algorithms-tutorial/" rel="alternate" type="text/html" title="Coevolutionary algorithms (simulations on two benchmark problems)" /><published>2024-09-14T00:00:00+00:00</published><updated>2024-09-14T00:00:00+00:00</updated><id>https://pklehre.github.io//EC-Theory-UoB/blog/2024/coevolutionary-algorithms-tutorial</id><content type="html" xml:base="https://pklehre.github.io//EC-Theory-UoB/blog/2024/coevolutionary-algorithms-tutorial/"><![CDATA[<hr />
 
 <h2 id="bilinear">Bilinear</h2>
@@ -25,8 +25,11 @@
 
 <h2 id="diagonal">Diagonal</h2>
 
-<p><a href="/EC-Theory-UoB/assets/plotly/ipcadiagonal.html" target="ipcaDiagonaldiagonal">
+<p><a href="/EC-Theory-UoB/assets/plotly/ipcadiagonal.html" target="Diagonal">
   <button class="styled-button">IPCA</button>
+</a>
+<a href="/EC-Theory-UoB/assets/plotly/pdcoeadiagonal.html" target="Diagonal">
+  <button class="styled-button">PDCoEA</button>
 </a>
 <a href="/EC-Theory-UoB/assets/plotly/onecommalambdaavgdiagonal.html" target="Diagonal">
   <button class="styled-button">(1,λ) CoEA with average fitness aggregation</button>
@@ -36,7 +39,7 @@
 </a></p>
 
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe name="ipcadiagonal" src="about:blank" frameborder="0" scrolling="no" height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
+  <iframe name="Diagonal" src="about:blank" frameborder="0" scrolling="no" height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 <style>
