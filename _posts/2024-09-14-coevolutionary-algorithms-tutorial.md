@@ -62,7 +62,7 @@ _styles: >
 ### PDCoEA
 
 <a href="{{ '/assets/plotly/pdcoea_animation.html' | relative_url }}" target="pdcoea">
-  <button>Load Animation</button>
+  <button class="styled-button">Load Animation</button>
 </a>
 
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
@@ -72,7 +72,7 @@ _styles: >
 ### RankDiv CoEA
 
 <a href="{{ '/assets/plotly/rankdivcoea_animation.html' | relative_url }}" target="rankdivcoea_animation">
-  <button>Load Animation</button>
+  <button class="styled-button">Load Animation</button>
 </a>
 
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
@@ -82,7 +82,7 @@ _styles: >
 ### (1,λ) CoEA with average fitness aggregation
 
 <a href="{{ '/assets/plotly/onecommalambdaavg.html' | relative_url }}" target="onecommalambdaavg">
-  <button>Load Animation</button>
+  <button class="styled-button">Load Animation</button>
 </a>
 
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
@@ -92,7 +92,7 @@ _styles: >
 ### (1,λ) CoEA with worst case fitness aggregation
 
 <a href="{{ '/assets/plotly/onecommalambdaworst.html' | relative_url }}" target="onecommalambdaworst">
-  <button>Load Animation</button>
+  <button class="styled-button">Load Animation</button>
 </a>
 
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
@@ -102,7 +102,7 @@ _styles: >
 ### (1+1) RLS-PDCoEA 
 
 <a href="{{ '/assets/plotly/rlspd.html' | relative_url }}" target="rlspd">
-  <button>Load Animation</button>
+  <button class="styled-button">Load Animation</button>
 </a>
 
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
@@ -114,7 +114,7 @@ _styles: >
 ### IPCA
 
 <a href="{{ '/assets/plotly/ipcadiagonal.html' | relative_url }}" target="ipcadiagonal">
-  <button>Load Animation</button>
+  <button class="styled-button">Load Animation</button>
 </a>
 
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
@@ -124,7 +124,7 @@ _styles: >
 ### (1,λ) CoEA with average fitness aggregation
 
 <a href="{{ '/assets/plotly/onecommalambdaavgdiagonal.html' | relative_url }}" target="onecommalambdaavgdiagonal">
-  <button>Load Animation</button>
+  <button class="styled-button">Load Animation</button>
 </a>
 
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
@@ -134,9 +134,31 @@ _styles: >
 ### (1+1) RLS-PDCoEA 
 
 <a href="{{ '/assets/plotly/rlspddiagonal.html' | relative_url }}" target="rlspddiagonal">
-  <button>Load Animation</button>
+  <button class="styled-button">Load Animation</button>
 </a>
 
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
   <iframe name="rlspddiagonal" src="about:blank" frameborder='0' scrolling='no' height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
 </div>
+
+
+<style>
+  .styled-button {
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    color: white; /* White text */
+    padding: 10px 16px; /* Padding for button size */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* No underline on the text */
+    display: inline-block; /* Inline-block to keep button style */
+    font-size: 16px; /* Font size */
+    margin: 20px 0; /* Some margin for spacing */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    border-radius: 6px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+  }
+  
+  .styled-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+</style>
