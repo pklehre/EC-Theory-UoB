@@ -1,88 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://pklehre.github.io//EC-Theory-UoB/feed.xml" rel="self" type="application/atom+xml" /><link href="https://pklehre.github.io//EC-Theory-UoB/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-09-15T10:01:23+00:00</updated><id>https://pklehre.github.io//EC-Theory-UoB/feed.xml</id><title type="html">Theory of Evolutionary Computation UoB</title><subtitle>Website for the Theory of Evolutionary Computation group at the University of Birmingham 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://pklehre.github.io//EC-Theory-UoB/feed.xml" rel="self" type="application/atom+xml" /><link href="https://pklehre.github.io//EC-Theory-UoB/" rel="alternate" type="text/html" hreflang="en" /><updated>2024-09-15T10:23:43+00:00</updated><id>https://pklehre.github.io//EC-Theory-UoB/feed.xml</id><title type="html">Theory of Evolutionary Computation UoB</title><subtitle>Website for the Theory of Evolutionary Computation group at the University of Birmingham 
 </subtitle><entry><title type="html">Coevolutionary algorithms (simulations on two benchmark problems)</title><link href="https://pklehre.github.io//EC-Theory-UoB/blog/2024/coevolutionary-algorithms-tutorial/" rel="alternate" type="text/html" title="Coevolutionary algorithms (simulations on two benchmark problems)" /><published>2024-09-14T00:00:00+00:00</published><updated>2024-09-14T00:00:00+00:00</updated><id>https://pklehre.github.io//EC-Theory-UoB/blog/2024/coevolutionary-algorithms-tutorial</id><content type="html" xml:base="https://pklehre.github.io//EC-Theory-UoB/blog/2024/coevolutionary-algorithms-tutorial/"><![CDATA[<hr />
 
 <h2 id="bilinear">Bilinear</h2>
 
-<h3 id="pdcoea">PDCoEA</h3>
-
-<p><a href="/EC-Theory-UoB/assets/plotly/pdcoea_animation.html" target="pdcoea">
-  <button class="styled-button">Load Animation</button>
+<p><a href="/EC-Theory-UoB/assets/plotly/pdcoea_animation.html" target="Bilinear">
+  <button class="styled-button">PDCoEA</button>
+</a>
+<a href="/EC-Theory-UoB/assets/plotly/rankdivcoea_animation.html" target="Bilinear">
+  <button class="styled-button">RankDiv CoEA</button>
+</a>
+<a href="/EC-Theory-UoB/assets/plotly/onecommalambdaavg.html" target="Bilinear">
+  <button class="styled-button">(1,λ) CoEA with average fitness aggregation</button>
+</a>
+<a href="/EC-Theory-UoB/assets/plotly/onecommalambdaworst.html" target="Bilinear">
+  <button class="styled-button">(1,λ) CoEA with worst case fitness aggregation</button>
+</a>
+<a href="/EC-Theory-UoB/assets/plotly/rlspd.html" target="Bilinear">
+  <button class="styled-button">(1+1) RLS-PDCoEA</button>
 </a></p>
 
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe name="pdcoea" src="about:blank" frameborder="0" scrolling="no" height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
-</div>
-
-<h3 id="rankdiv-coea">RankDiv CoEA</h3>
-
-<p><a href="/EC-Theory-UoB/assets/plotly/rankdivcoea_animation.html" target="rankdivcoea_animation">
-  <button class="styled-button">Load Animation</button>
-</a></p>
-
-<div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe name="rankdivcoea_animation" src="about:blank" frameborder="0" scrolling="no" height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
-</div>
-
-<h3 id="1λ-coea-with-average-fitness-aggregation">(1,λ) CoEA with average fitness aggregation</h3>
-
-<p><a href="/EC-Theory-UoB/assets/plotly/onecommalambdaavg.html" target="onecommalambdaavg">
-  <button class="styled-button">Load Animation</button>
-</a></p>
-
-<div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe name="onecommalambdaavg" src="about:blank" frameborder="0" scrolling="no" height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
-</div>
-
-<h3 id="1λ-coea-with-worst-case-fitness-aggregation">(1,λ) CoEA with worst case fitness aggregation</h3>
-
-<p><a href="/EC-Theory-UoB/assets/plotly/onecommalambdaworst.html" target="onecommalambdaworst">
-  <button class="styled-button">Load Animation</button>
-</a></p>
-
-<div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe name="onecommalambdaworst" src="about:blank" frameborder="0" scrolling="no" height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
-</div>
-
-<h3 id="11-rls-pdcoea">(1+1) RLS-PDCoEA</h3>
-
-<p><a href="/EC-Theory-UoB/assets/plotly/rlspd.html" target="rlspd">
-  <button class="styled-button">Load Animation</button>
-</a></p>
-
-<div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe name="rlspd" src="about:blank" frameborder="0" scrolling="no" height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
+  <iframe name="Bilinear" src="about:blank" frameborder="0" scrolling="no" height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 <h2 id="diagonal">Diagonal</h2>
 
-<h3 id="ipca">IPCA</h3>
-
-<p><a href="/EC-Theory-UoB/assets/plotly/ipcadiagonal.html" target="ipcadiagonal">
-  <button class="styled-button">Load Animation</button>
+<p><a href="/EC-Theory-UoB/assets/plotly/ipcadiagonal.html" target="ipcaDiagonaldiagonal">
+  <button class="styled-button">IPCA</button>
+</a>
+<a href="/EC-Theory-UoB/assets/plotly/onecommalambdaavgdiagonal.html" target="Diagonal">
+  <button class="styled-button">(1,λ) CoEA with average fitness aggregation</button>
+</a>
+<a href="/EC-Theory-UoB/assets/plotly/rlspddiagonal.html" target="Diagonal">
+  <button class="styled-button">(1+1) RLS-PDCoEA</button>
 </a></p>
 
 <div class="l-page" style="display: flex; justify-content: center; align-items: center;">
   <iframe name="ipcadiagonal" src="about:blank" frameborder="0" scrolling="no" height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
-</div>
-
-<h3 id="1λ-coea-with-average-fitness-aggregation-1">(1,λ) CoEA with average fitness aggregation</h3>
-
-<p><a href="/EC-Theory-UoB/assets/plotly/onecommalambdaavgdiagonal.html" target="onecommalambdaavgdiagonal">
-  <button class="styled-button">Load Animation</button>
-</a></p>
-
-<div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe name="onecommalambdaavgdiagonal" src="about:blank" frameborder="0" scrolling="no" height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
-</div>
-
-<h3 id="11-rls-pdcoea-1">(1+1) RLS-PDCoEA</h3>
-
-<p><a href="/EC-Theory-UoB/assets/plotly/rlspddiagonal.html" target="rlspddiagonal">
-  <button class="styled-button">Load Animation</button>
-</a></p>
-
-<div class="l-page" style="display: flex; justify-content: center; align-items: center;">
-  <iframe name="rlspddiagonal" src="about:blank" frameborder="0" scrolling="no" height="550px" width="70%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 <style>
@@ -95,7 +49,7 @@
     text-decoration: none; /* No underline on the text */
     display: inline-block; /* Inline-block to keep button style */
     font-size: 16px; /* Font size */
-    margin: 20px 0; /* Some margin for spacing */
+    margin: 20px 10px; /* Some margin for spacing */
     cursor: pointer; /* Cursor changes to pointer on hover */
     border-radius: 6px; /* Rounded corners */
     transition: background-color 0.3s ease; /* Smooth transition effect */
