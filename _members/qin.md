@@ -1,22 +1,22 @@
 ---
 layout: about
 inline: false
-group: PhD Researcher
-group_rank: 4
+group: PhD Alumni
+group_rank: 5
 team_frontpage: true
 
 title: Xiaoyu Qin
-description: Xiaoyu Qin is a PhD student in Computer Science at School of Computer Science, University of Birmingham, and supervised by Prof Per Kristian Lehre and Prof Ata Kaban. The topic of his PhD thesis is Self-adaptive Parameter Control Mechanism in Evolutionary Computation.
+description: Xiaoyu Qin is a PhD alumni in Computer Science at School of Computer Science, University of Birmingham, and was supervised by Prof Per Kristian Lehre and Prof Ata Kaban. The topic of his PhD thesis is Self-adaptive Parameter Control Mechanism in Evolutionary Computation.
 lastname: Qin
 publications: 'author^=*Qin'
 
 teaser: >
-    Xiaoyu Qin is PhD student in the School of Computer Science at the University of Birmingham.
+    Xiaoyu Qin is PhD alumni in the School of Computer Science at the University of Birmingham.
 
 profile:
-    website: https://www.cs.bham.ac.uk/~xxq896/
+    website: https://chengcheng-qin.github.io/
     name: Xiaoyu Qin
-    position: PhD student
+    position: PhD alumni
     align: right
     image: qin-profile.jpg
     email:
@@ -33,4 +33,4 @@ profile:
 ## Short Bio
 
 
-Xiaoyu Qin is a PhD student in Computer Science at School of Computer Science, University of Birmingham, and supervised by Prof Per Kristian Lehre and Prof Ata Kaban. The topic of his PhD thesis is Self-adaptive Parameter Control Mechanism in Evolutionary Computation.
+Xiaoyu Qin is a PhD alumni in Computer Science at School of Computer Science, University of Birmingham, and was supervised by Prof Per Kristian Lehre and Prof Ata Kaban. The topic of his PhD thesis is Self-adaptive Parameter Control Mechanism in Evolutionary Computation.

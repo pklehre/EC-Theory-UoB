@@ -2,7 +2,7 @@
 layout: about
 inline: false
 group: PhD Researcher
-group_rank: 5
+group_rank: 4
 team_frontpage: true
 
 title: Shishen Lin
@@ -14,7 +14,7 @@ teaser: >
     Shishen Lin starts his PhD of Computer Science at Birmingham since Sep. 2021. He mainly focuses on Artificial Intelligence, Optimisation, Evolutionary Algorithm and Runtime Time Analysis of EAs. Before that, he was a MSc Mathematics student at Imperial College London with a focus on  probability theory, Markov processes and random matrix theory. He has completed his BSc Maths degree at Warwick before going to Imperial.
 
 profile:
-    website: TBA
+    website: 
     name: Shishen Lin
     position: PhD student
     align: right
