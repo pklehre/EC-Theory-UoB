@@ -10,6 +10,7 @@ display_categories: [work, fun]
 horizontal: false
 --- 
 
+#TODO: Credits to https://www.flickr.com/photos/tacker/
 ![Trondheim](/assets/img/trondheim_festningen.jpg){: width="800" .rounded}
 
 **Speaker**
