@@ -10,6 +10,13 @@ display_categories: [work, fun]
 horizontal: false
 --- 
 
+![Trondheim](/assets/img/trondheim_festningen.jpg){: width="800" .rounded}
+
+**Speaker**
+
+Per Kristian Lehre, School of Computer Science, University of
+Birmingham, United Kingdom
+
 **Abstract**
 
 A rich theory on runtime analysis (also called time-complexity
@@ -64,6 +71,9 @@ given many tutorials on evolutionary computation in summer schools, as
 well as major conferences and workshops.  He was the main coordinator
 of the 1.58M euro EU-funded project SAGE which brought together
 theories of evolutionary computation and population genetics.  He is
-also a Turing AI Acceleration Fellow funded by the UKRI with a £1.26M
+also a Turing AI Acceleration Fellow funded by the UKRI with a Â£1.26M
 project on Runtime Analysis of Co-evolutionary Algorithms.
+
+**Demonstrations**
+
 
