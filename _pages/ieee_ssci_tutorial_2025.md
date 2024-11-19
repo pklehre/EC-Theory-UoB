@@ -1,8 +1,8 @@
 ---
 layout: page
-title: untime Analysis of Evolutionary Algorithms
+title: Runtime Analysis of Evolutionary Algorithms
 subtitle: IEEE SSCI 2025 Tutorial
-permalink: /projects/
+permalink: /ieee_ssci_2025/
 description: Tutorial at IEEE SSCI 2025 in Trondheim, Norway
 nav: false
 nav_order: 2
