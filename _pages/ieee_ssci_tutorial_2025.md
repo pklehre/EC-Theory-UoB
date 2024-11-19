@@ -1,4 +1,4 @@
----
+--- 
 layout: page
 title: Runtime Analysis of Evolutionary Algorithms
 subtitle: IEEE SSCI 2025 Tutorial
@@ -8,9 +8,9 @@ nav: false
 nav_order: 2
 display_categories: [work, fun]
 horizontal: false
----
+--- 
 
-Abstract
+**Abstract**
 
 A rich theory on runtime analysis (also called time-complexity
 analysis) of EAs has been developed over the last 20 years. The goal
@@ -37,7 +37,7 @@ depend on relationships between mutation and selection rates? What
 determines an EA's tolerance for uncertainty, e.g. in form of noisy or
 partially available fitness?
 
-Biography
+**Biography**
 
 Professor Per Kristian Lehre is affiliated with the School of Computer
 Science at the University of Birmingham (since Jan 2017). Before
