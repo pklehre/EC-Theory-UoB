@@ -10,10 +10,10 @@ display_categories: [work, fun]
 horizontal: false
 --- 
 
-#TODO: Credits to https://www.flickr.com/photos/tacker/
 
 {: style="text-align:center"}
 ![Trondheim]({{ "/assets/img/trondheim_festningen.jpg" | relative_url }}){: width="800" .rounded}
+(Photo by [Markus Tacker](https://www.flickr.com/photos/tacker/))
 
 **Speaker**
 
@@ -53,7 +53,7 @@ Professor Per Kristian Lehre is affiliated with the School of Computer
 Science at the University of Birmingham (since Jan 2017). Before
 joining Birmingham, he was Assistant Professor with the University of
 Nottingham since 2011. He obtained MSc and PhD degrees in Computer
-Science from the Norwegian Univer- sity of Science and Technology
+Science from the Norwegian University of Science and Technology
 (NTNU) in Trondheim, He completed the PhD in 2006 under the
 supervision of Prof Pauline Haddow and joined the School of Computer
 Science at The University of Birmingham, UK, as a Research Fellow in
@@ -77,6 +77,5 @@ theories of evolutionary computation and population genetics.  He is
 also a Turing AI Acceleration Fellow funded by the UKRI with a £1.26M
 project on Runtime Analysis of Co-evolutionary Algorithms.
 
-**Demonstrations**
 
 
