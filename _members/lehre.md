@@ -14,7 +14,7 @@ teaser: >
     Per Kristian Lehre is Professor of Evolutionary Computation in the School of Computer Science at the University of Birmingham.
 
 profile:
-    website: https://www.cs.bham.ac.uk/~lehrepk/
+    website: Lehre/
     name: Prof. Per Kristian Lehre
     position: Head of the Group
     align: right
