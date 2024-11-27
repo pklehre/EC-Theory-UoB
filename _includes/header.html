@@ -51,6 +51,21 @@
                   {%- endif -%}
                 </a>
               </li>
+
+              <!-- Per Kristian Lehre -->
+              {%- assign sorted_pages = site.pages | sort: "nav_order" -%}
+              {%- for p in sorted_pages -%}
+              {%- if p.nav and p.autogen == nil and p.nav_order == 0 -%}
+              <li class="nav-item {% if page.title == p.title %}active{% endif %}">
+                <a class="nav-link" href="{{ p.url | relative_url }}">{{ p.title }}
+                  {%- if page.title == p.title -%}
+                  <span class="sr-only">(current)</span>
+                  {%- endif -%}
+                </a>
+              </li>
+              {%- endif %}
+              {% endfor %}
+
               {% if site.blog_nav_title %}
               <!-- Blog -->
               <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
@@ -63,9 +78,8 @@
               {%- endif %}
 
               <!-- Other pages -->
-              {%- assign sorted_pages = site.pages | sort: "nav_order" -%}
               {%- for p in sorted_pages -%}
-              {%- if p.nav and p.autogen == nil -%}
+              {%- if p.nav and p.autogen == nil and p.nav_order != 0 -%}
               {%- if p.dropdown %}
               <li class="nav-item dropdown {% if page.title == p.title %}active{% endif %}">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ p.title }}

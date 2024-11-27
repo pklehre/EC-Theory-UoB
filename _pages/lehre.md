@@ -3,8 +3,7 @@ layout: page
 permalink: /Lehre/
 title: Prof. Per Kristian Lehre
 nav: true
-nav_order: 3
-nav_rank: 3
+nav_order: 0
 ---
 
 {: style="text-align:center"}

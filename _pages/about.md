@@ -4,8 +4,8 @@ title: Home
 permalink: /
 subtitle: School of Computer Science, University of Birmingham, UK
 
-profile:
-  align: right
+#profile:
+#  align: right
 #  address: >
 #    <p>School of Computer Science</p>
 #    <p>University of Birmingham</p>
