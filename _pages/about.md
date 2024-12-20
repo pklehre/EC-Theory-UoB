@@ -43,7 +43,7 @@ developing better algorithms for challenging optimisation scenarios,
 such as
 
  - [PDCoEA](https://dl.acm.org/doi/abs/10.1145/3512290.3528853) (a population-based co-evolutionary algorithm for adversarial
-   optimisation problems)
+   optimisation problems) ([code](https://github.com/pklehre/pdcoea.git))
  - [MOSA-EA](https://github.com/ChengCheng-Qin/mosa-ea) (a self-adaptive
    algorithm for single-objective, pseudo-Boolean optimisation)
 
