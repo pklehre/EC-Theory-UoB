@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Theory of Evolutionary Computation UoB # the website title (if blank, full name will be used instead)
+title: Theory of Evolutionary Computation @UoB # the website title (if blank, full name will be used instead)
 first_name: Theory of Evolutionary Computation
 middle_name: 
 last_name: UoB
@@ -181,7 +181,7 @@ collections:
 announcements:
   enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  limit: # leave blank to include all the news in the `_news` folder
 
 latest_posts:
   enabled: true

@@ -2,17 +2,17 @@
 layout: about
 title: Home
 permalink: /
-subtitle: 
+subtitle: School of Computer Science, University of Birmingham, UK
 
-profile:
-  align: right
-  address: >
-    <p>School of Computer Science</p>
-    <p>University of Birmingham</p>
-    <p>Edgbaston</p>
-    <p>Birmingham</p>
-    <p>B15 2TT</p>
-    <p>United Kingdom</p>
+#profile:
+#  align: right
+#  address: >
+#    <p>School of Computer Science</p>
+#    <p>University of Birmingham</p>
+#    <p>Edgbaston</p>
+#    <p>Birmingham</p>
+#    <p>B15 2TT</p>
+#    <p>United Kingdom</p>
 
 news: false  # includes a list of news items
 latest_posts: false  # includes a list of the newest posts
