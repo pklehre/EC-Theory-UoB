@@ -1,3 +1,20 @@
+@incollection{benford_general_2025,
+ abstract = {Due to their complex dynamics, combinatorial games are a key test case and application for algorithms that train game playing agents. Among those algorithms that train using self-play are coevolutionary algorithms (CoEAs). However, the successful application of CoEAs for game playing is difficult due to pathological behaviours such as cycling, an issue especially critical for games with intransitive payoff landscapes.Insight into how to design CoEAs to avoid such behaviours can be provided by runtime analysis. In this paper, we push the scope of runtime analysis for CoEAs to combinatorial games, proving a general upper bound for the number of simulated games needed for UMDA to discover (with high probability) an optimal strategy. This result applies to any impartial combinatorial game, and for many games the implied bound is polynomial or quasipolynomial as a function of the number of game positions. After proving the main result, we provide several applications to simple well-known games: Nim, Chomp, Silver Dollar, and Turning Turtles. As the first runtime analysis for CoEAs on combinatorial games, this result is a critical step towards a comprehensive theoretical framework for coevolution.},
+ address = {New York, NY, USA},
+ author = {Benford, Alistair and Lehre, Per Kristian},
+ booktitle = {Proceedings of the {Genetic} and {Evolutionary} {Computation} {Conference}},
+ isbn = {979-8-4007-1465-8},
+ month = {July},
+ note = {},
+ pages = {1594--1603},
+ publisher = {Association for Computing Machinery},
+ title = {A {General} {Upper} {Bound} for the {Runtime} of a {Coevolutionary} {Algorithm} on {Impartial} {Combinatorial} {Games}},
+ url = {https://doi.org/10.1145/3712256.3726437},
+ urldate = {2025-08-12},
+ year = {2025},
+ bibtex_show = {true},
+}
+
 @article{lehre_runtime_2025,
  abstract = {The usual approach in runtime analysis is to derive estimates on the number of fitness function evaluations required by a method until a suitable element of the search space is found. One justification for this is that in real applications, fitness evaluation often contributes the most computational effort. A tacit assumption in this approach is that this effort is uniform and static across the search space. However, this assumption often does not hold in practice: some candidates may be far more expensive to evaluate than others. This might occur, for example, when fitness evaluation requires running a simulation or training a machine learning model. Despite the availability of a wide range of benchmark functions coupled with various runtime performance guarantees, the runtime analysis community currently lacks a solid perspective of handling variable fitness cost. Our goal with this paper is to argue for incorporating this perspective into our theoretical toolbox. We introduce two models of handling variable cost: a simple non-adaptive model together with a more general adaptive model. We prove cost bounds in these scenarios and discuss the implications for taking into account costly regions in the search space.},
  author = {Lehre, Per Kristian and Sutton, Andrew M.},
@@ -389,7 +406,7 @@ This paper provides the first rigorous runtime analysis of CoEAs with pairwise d
  bibtex_show = {true},
 }
 
-@inproceedings{lehre_self-adaptation_2023_391,
+@inproceedings{lehre_self-adaptation_2023_408,
  address = {Potsdam, Germany},
  author = {Lehre, Per Kristian and Qin, Xiaoyu},
  booktitle = {Proceedings of the 17th {ACM}/{SIGEVO} {Conference} on {Foundations} of {Genetic} {Algorithms}},
@@ -517,7 +534,7 @@ talk = {https://vimeo.com/723767059},
  bibtex_show = {true},
 }
 
-@inproceedings{hevia_fajardo_self-adjusting_2021_519,
+@inproceedings{hevia_fajardo_self-adjusting_2021_536,
  abstract = {Recent theoretical studies have shown that self-adjusting mechanisms can provably outperform the best static parameters in evolutionary algorithms on discrete problems. However, the majority of these studies concerned elitist algorithms and we do not have a clear answer on whether the same mechanisms can be applied for non-elitist algorithms. We study one of the best-known parameter control mechanisms, the one-fifth success rule, to control the offspring population size λ in the non-elitist (1, λ) EA. It is known that the (1, λ) EA has a sharp threshold with respect to the choice of λ where the runtime on OneMax changes from polynomial to exponential time. Hence, it is not clear whether parameter control mechanisms are able to find and maintain suitable values of λ. We show that the answer crucially depends on the success rate s (i. e. a one-(s + 1)-th success rule). We prove that, if the success rate is appropriately small, the self-adjusting (1, λ) EA optimises OneMax in O(n) expected generations and O(n log n) expected evaluations. A small success rate is crucial: we also show that if the success rate is too large, the algorithm has an exponential runtime on OneMax.},
  address = {New York, NY, USA},
  author = {Hevia Fajardo, Mario Alejandro and Sudholt, Dirk},
