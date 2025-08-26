@@ -1,3 +1,22 @@
+@inproceedings{fajardo_runtime_2025,
+ abstract = {Coevolutionary algorithms are a family of black-box optimisation algorithms with many applications in game theory. We study a coevolutionary algorithm on an important class of games in game theory: potential games. In these games, a real-valued function defined over the entire strategy space encapsulates the strategic choices of all players collectively. We present the first theoretical analysis of a coevolutionary algorithm on potential games, showing a runtime guarantee that holds for all exact potential games, some weighted and ordinal potential games, and certain non-potential games. Using this result, we show a polynomial runtime on singleton congestion games. Furthermore, we show that there exist games for which coevolutionary algorithms find Nash equilibria exponentially faster than best or better response dynamics, and games for which coevolutionary algorithms find better Nash equilibria as well. Finally, we conduct experimental evaluations showing that our algorithm can outperform widely used algorithms, such as better response on random instances of singleton congestion games, as well as fictitious play, counterfactual regret minimisation (CFR), and external sampling CFR on dynamic routing games.},
+ address = {Leiden Netherlands},
+ author = {Fajardo, Mario Hevia and Toutouh, Jamal and Hemberg, Erik and O'Reilly, Una-May and Lehre, Per Kristian},
+ booktitle = {Proceedings of the {Foundations} of {Genetic} {Algorithms} {XVIII} on {ZZZ}},
+ doi = {10.1145/3729878.3746616},
+ isbn = {979-8-4007-1859-5},
+ language = {en},
+ month = {August},
+ note = {},
+ pages = {85--95},
+ publisher = {ACM},
+ title = {Runtime {Bounds} for a {Coevolutionary} {Algorithm} on {Classes} of {Potential} {Games}},
+ url = {https://dl.acm.org/doi/10.1145/3729878.3746616},
+ urldate = {2025-08-26},
+ year = {2025},
+ bibtex_show = {true},
+}
+
 @incollection{benford_general_2025,
  abstract = {Due to their complex dynamics, combinatorial games are a key test case and application for algorithms that train game playing agents. Among those algorithms that train using self-play are coevolutionary algorithms (CoEAs). However, the successful application of CoEAs for game playing is difficult due to pathological behaviours such as cycling, an issue especially critical for games with intransitive payoff landscapes.Insight into how to design CoEAs to avoid such behaviours can be provided by runtime analysis. In this paper, we push the scope of runtime analysis for CoEAs to combinatorial games, proving a general upper bound for the number of simulated games needed for UMDA to discover (with high probability) an optimal strategy. This result applies to any impartial combinatorial game, and for many games the implied bound is polynomial or quasipolynomial as a function of the number of game positions. After proving the main result, we provide several applications to simple well-known games: Nim, Chomp, Silver Dollar, and Turning Turtles. As the first runtime analysis for CoEAs on combinatorial games, this result is a critical step towards a comprehensive theoretical framework for coevolution.},
  address = {New York, NY, USA},
@@ -406,7 +425,7 @@ This paper provides the first rigorous runtime analysis of CoEAs with pairwise d
  bibtex_show = {true},
 }
 
-@inproceedings{lehre_self-adaptation_2023_408,
+@inproceedings{lehre_self-adaptation_2023_427,
  address = {Potsdam, Germany},
  author = {Lehre, Per Kristian and Qin, Xiaoyu},
  booktitle = {Proceedings of the 17th {ACM}/{SIGEVO} {Conference} on {Foundations} of {Genetic} {Algorithms}},
@@ -534,7 +553,7 @@ talk = {https://vimeo.com/723767059},
  bibtex_show = {true},
 }
 
-@inproceedings{hevia_fajardo_self-adjusting_2021_536,
+@inproceedings{hevia_fajardo_self-adjusting_2021_555,
  abstract = {Recent theoretical studies have shown that self-adjusting mechanisms can provably outperform the best static parameters in evolutionary algorithms on discrete problems. However, the majority of these studies concerned elitist algorithms and we do not have a clear answer on whether the same mechanisms can be applied for non-elitist algorithms. We study one of the best-known parameter control mechanisms, the one-fifth success rule, to control the offspring population size λ in the non-elitist (1, λ) EA. It is known that the (1, λ) EA has a sharp threshold with respect to the choice of λ where the runtime on OneMax changes from polynomial to exponential time. Hence, it is not clear whether parameter control mechanisms are able to find and maintain suitable values of λ. We show that the answer crucially depends on the success rate s (i. e. a one-(s + 1)-th success rule). We prove that, if the success rate is appropriately small, the self-adjusting (1, λ) EA optimises OneMax in O(n) expected generations and O(n log n) expected evaluations. A small success rate is crucial: we also show that if the success rate is too large, the algorithm has an exponential runtime on OneMax.},
  address = {New York, NY, USA},
  author = {Hevia Fajardo, Mario Alejandro and Sudholt, Dirk},
