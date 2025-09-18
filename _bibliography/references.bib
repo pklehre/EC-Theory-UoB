@@ -70,6 +70,25 @@ This paper provides the first rigorous runtime analysis of CoEAs with pairwise d
  bibtex_show = {true},
 }
 
+@inproceedings{dang_slo_2024,
+ abstract = {While some common fitness landscape characteristics are critical when determining the runtime of evolutionary algorithms (EAs), the relationship between fitness landscape structure and the runtime of EAs is poorly understood. Recently, Dang et al. (2021) introduced a classification of pseudo-Boolean problems showing that "sparsity" of local optima and the "density" of fitness valleys can be crucial characteristics when determining the runtime of EAs. However, their approach could only classify some classes of pseudo-Boolean functions and thus defined an incomplete hierarchy.We generalise the previous work to a complete hierarchy for all pseudo-Boolean functions. The hierarchy is consistent with existing results for the runtime of EAs. The hardest part of the hierarchy consists of problems satisfying the No Free Lunch theorem. The easiest part contains well-known theoretical benchmark problems, easy for EAs. The intermediary parts contain instances of NP-hard problems. Problem classes where local optima sparsity exceed fitness valley density are shown to have exponential black-box complexity. We study how random perturbations of a function can change its classification. E.g, randomly perturbing search points in OneMax with constant probability leads to a problem class that can still be optimised efficiently with appropriately tuned non-elitist EAs.},
+ address = {New York, NY, USA},
+ author = {Dang, Duc-Cuong and Lehre, Per Kristian},
+ booktitle = {Proceedings of the {Genetic} and {Evolutionary} {Computation} {Conference}},
+ doi = {10.1145/3638529.3654221},
+ isbn = {979-8-4007-0494-9},
+ month = {July},
+ note = {},
+ pages = {1551--1559},
+ publisher = {Association for Computing Machinery},
+ series = {{GECCO} '24},
+ title = {The {SLO} {Hierarchy} of pseudo-{Boolean} {Functions} and {Runtime} of {Evolutionary} {Algorithms}},
+ url = {https://dl.acm.org/doi/10.1145/3638529.3654221},
+ urldate = {2025-09-18},
+ year = {2024},
+ bibtex_show = {true},
+}
+
 @inproceedings{hevia_fajardo_self-adaptive_2024,
  abstract = {Coevolutionary algorithms are helpful computational abstractions of adversarial behavior and they demonstrate multiple ways that populations of competing adversaries influence one another. We introduce the ability for each competitor's mutation rate to evolve through self-adaptation. Because dynamic environments are frequently addressed with self-adaptation, we set up dynamic problem environments to investigate the impact of this ability. For a simple bilinear problem, a sensitivity analysis of the adaptive method's parameters reveals that it is robust over a range of multiplicative rate factors, when the rate is changed up or down with equal probability. An empirical study determines that each population's mutation rates converge to values close to the error threshold. Mutation rate dynamics are complex when both populations adapt their rates. Large scale empirical self-adaptation results reveal that both reasonable solutions and rates can be found. This addresses the challenge of selecting ideal static mutation rates in coevolutionary algorithms. The algorithm's payoffs are also robust. They are rarely poor and frequently they are as high as the payoff of the static rate to which they converge. On rare runs, they are higher.},
  address = {New York, NY, USA},
@@ -89,7 +108,7 @@ This paper provides the first rigorous runtime analysis of CoEAs with pairwise d
  bibtex_show = {true},
 }
 
-@inproceedings{dang_slo_2024,
+@inproceedings{dang_slo_2024_110,
  abstract = {While some common fitness landscape characteristics are critical when determining the runtime of evolutionary algorithms (EAs), the relationship between fitness landscape structure and the runtime of EAs is poorly understood. Recently, Dang et al. (2021) introduced a classification of pseudo-Boolean problems showing that "sparsity" of local optima and the "density" of fitness valleys can be crucial characteristics when determining the runtime of EAs. However, their approach could only classify some classes of pseudo-Boolean functions and thus defined an incomplete hierarchy.We generalise the previous work to a complete hierarchy for all pseudo-Boolean functions. The hierarchy is consistent with existing results for the runtime of EAs. The hardest part of the hierarchy consists of problems satisfying the No Free Lunch theorem. The easiest part contains well-known theoretical benchmark problems, easy for EAs. The intermediary parts contain instances of NP-hard problems. Problem classes where local optima sparsity exceed fitness valley density are shown to have exponential black-box complexity. We study how random perturbations of a function can change its classification. E.g, randomly perturbing search points in OneMax with constant probability leads to a problem class that can still be optimised efficiently with appropriately tuned non-elitist EAs.},
  address = {New York, NY, USA},
  author = {Dang, Duc-Cuong and Lehre, Per Kristian},
@@ -425,7 +444,7 @@ This paper provides the first rigorous runtime analysis of CoEAs with pairwise d
  bibtex_show = {true},
 }
 
-@inproceedings{lehre_self-adaptation_2023_427,
+@inproceedings{lehre_self-adaptation_2023_446,
  address = {Potsdam, Germany},
  author = {Lehre, Per Kristian and Qin, Xiaoyu},
  booktitle = {Proceedings of the 17th {ACM}/{SIGEVO} {Conference} on {Foundations} of {Genetic} {Algorithms}},
@@ -553,7 +572,7 @@ talk = {https://vimeo.com/723767059},
  bibtex_show = {true},
 }
 
-@inproceedings{hevia_fajardo_self-adjusting_2021_555,
+@inproceedings{hevia_fajardo_self-adjusting_2021_574,
  abstract = {Recent theoretical studies have shown that self-adjusting mechanisms can provably outperform the best static parameters in evolutionary algorithms on discrete problems. However, the majority of these studies concerned elitist algorithms and we do not have a clear answer on whether the same mechanisms can be applied for non-elitist algorithms. We study one of the best-known parameter control mechanisms, the one-fifth success rule, to control the offspring population size λ in the non-elitist (1, λ) EA. It is known that the (1, λ) EA has a sharp threshold with respect to the choice of λ where the runtime on OneMax changes from polynomial to exponential time. Hence, it is not clear whether parameter control mechanisms are able to find and maintain suitable values of λ. We show that the answer crucially depends on the success rate s (i. e. a one-(s + 1)-th success rule). We prove that, if the success rate is appropriately small, the self-adjusting (1, λ) EA optimises OneMax in O(n) expected generations and O(n log n) expected evaluations. A small success rate is crucial: we also show that if the success rate is too large, the algorithm has an exponential runtime on OneMax.},
  address = {New York, NY, USA},
  author = {Hevia Fajardo, Mario Alejandro and Sudholt, Dirk},
