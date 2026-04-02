@@ -23,8 +23,8 @@ social: false  # includes social icons at the bottom of the page
 {: style="text-align:center"}
 ![GECCO 2023 in Lisbon](assets/img/group-picture-lisbon-small.jpg){: width="800" .rounded}
 
-We do fundamental research in the theory of optimisation, particularly
-evolutionary computation. Our research methodology is based on
+We do fundamental research in AI, particularly
+theory of evolutionary computation. Our research methodology is based on
 rigorous mathematical analysis of evolutionary processes, and the
 application of insights from this analysis to the design of improved
 optimisation algorithms with provable performance bounds.

@@ -9,17 +9,12 @@ nav_order: 0
 {: style="text-align:center"}
 ![PerKristianLehre]({{ "/assets/img/prof_pic.jpg" | relative_url }}){: width="400" .rounded}
 
-<p>
-<a href="https://twitter.com/pklehre" class="twitter-follow-button"
-data-show-count="false" data-size="large">Follow @pklehre</a>
-</p>
-<a class="twitter-timeline" href="https://twitter.com/pklehre" data-widget-id="718354463170408448">Tweets by @pklehre</a>
 
 <p>
 Professor
     in <a href="http://www.cs.bham.ac.uk/">School of Computer
     Science</a> at the <a href="http://www.birmingham.ac.uk">University of
-    Birmingham</a> and <a href="https://www.gov.uk/government/publications/turing-artificial-intelligence-fellowships/turing-artificial-intelligence-fellowships">Turing AI Acceleration Fellow</a>.
+    Birmingham</a> and <a href="https://www.gov.uk/government/publications/turing-artificial-intelligence-fellowships/turing-artificial-intelligence-fellowships">Turing AI Acceleration Fellow (2021-2025)</a>.
 
 
 <h2>Contact and Office Hours</h2>
@@ -34,6 +29,8 @@ B15 2TT, United Kingdom
 
 <p>Email: P.K.Lehre@bham.ac.uk </p> 
 <p>Phone: +44 (0)121 414 8560</p>
+<p>Twitter/X: <a href="https://twitter.com/pklehre" class="twitter-follow-button" data-show-count="false" data-size="large">@pklehre</a>
+</p>
 
 <p>Office hours Fridays 11-12 (office 207). For all Zoom meetings with
   me, (<a href="https://bham-ac-uk.zoom.us/j/92150239057">please use this link</a>).</p>
@@ -60,8 +57,7 @@ February 19th 2016. Please contact me before submitting your application.
 -->
 
 <h2>Teaching</h2>
-(I currently have no teaching and admin duties as my time
-over the next years is bought out by my Turing AI fellowship.)
+(I had no teaching/admin duties 2020-2025 due to my Turing AI fellowship.)
 <ul>
   <li>Evolutionary Computation (2026, co-taught with Shan He)</li>
   <li>Neural Computation (Autumn 2020, co-taught with Jinming Duan,
@@ -81,7 +77,6 @@ over the next years is bought out by my Turing AI fellowship.)
   population genetics, randomised algorithms and related topics.
 </p>
 
-</p>
 
 <h2>ROAR-NET Short-term Scientific Missions</h2>
       <p>Funding is available for research visits within the ROAR-NET
@@ -92,7 +87,10 @@ over the next years is bought out by my Turing AI fellowship.)
 <h2>Current Activities and News</h2>
 
 <ul>
-  <li>GECCO papers aceppted</li>
+  <li>GECCO 2026 tutorial on theory of co-evolutionary algorithms with Alistair Benford accepted </li>
+  <li>PPSN 2026 tutorial on runtime analysis of population-baseed algorithms on complex fitness landscapes accepted</li>
+  <li>GECCO paper with ROAR-NET WG4 theory group accepted</li>  
+  <li>GECCO paper with Alistair Benford on theory of co-evolutionary algorithms accepted</li>
   <li>NeurIPS 2025 paper accept: Benford and Lehre,
   Theoretical Guarantees for the Retention of Strict Nash Equilibria
   by CoEvolutionary Algorithms</li>
@@ -102,7 +100,6 @@ over the next years is bought out by my Turing AI fellowship.)
   <li>Shishen Lin has submitted his PhD dissertation. He will be
   joining the <a href="https://oceanerc.com/">OCean ERC</a> project at
   the University of Warwick as a postdoc.</li>
-
   <li>Joining COST Action ROAR-NET as work group leader on optimisation under uncertainty.</li>
 </ul>
 
