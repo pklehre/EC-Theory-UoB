@@ -32,8 +32,7 @@ Edgbaston<br>
 B15 2TT, United Kingdom
 </p>
 
-<p>Email: P.K.Lehre@bham.ac.uk (please do not use my previous School
-  of CS email address)</p> 
+<p>Email: P.K.Lehre@bham.ac.uk </p> 
 <p>Phone: +44 (0)121 414 8560</p>
 
 <p>Office hours Fridays 11-12 (office 207). For all Zoom meetings with
@@ -64,6 +63,7 @@ February 19th 2016. Please contact me before submitting your application.
 (I currently have no teaching and admin duties as my time
 over the next years is bought out by my Turing AI fellowship.)
 <ul>
+  <li>Evolutionary Computation (2026, co-taught with Shan He)</li>
   <li>Neural Computation (Autumn 2020, co-taught with Jinming Duan,
     Yunwen Lei and Shan He)</li>
   <li>Nature Inspired Search and Optimisation (Spring 2020, co-taught with Shan He)</li>
@@ -81,12 +81,6 @@ over the next years is bought out by my Turing AI fellowship.)
   population genetics, randomised algorithms and related topics.
 </p>
 
-<h2>Open PhD Scholarship</h2>
-      <p>We are currently looking for one PhD student to be associated
-	with my Turing AI Acceleration fellowship project on
-	co-evolution. If you are interested in theory of evolutionary
-	computation, particularly runtime analysis, please get in
-	touch with me or <a href="https://www.birmingham.ac.uk/postgraduate/courses/research/computer-science/computer-science-phd.aspx?OpenSection=HowToApply">apply directly here</a>.
 </p>
 
 <h2>ROAR-NET Short-term Scientific Missions</h2>
@@ -98,6 +92,7 @@ over the next years is bought out by my Turing AI fellowship.)
 <h2>Current Activities and News</h2>
 
 <ul>
+  <li>GECCO papers aceppted</li>
   <li>NeurIPS 2025 paper accept: Benford and Lehre,
   Theoretical Guarantees for the Retention of Strict Nash Equilibria
   by CoEvolutionary Algorithms</li>
@@ -109,38 +104,6 @@ over the next years is bought out by my Turing AI fellowship.)
   the University of Warwick as a postdoc.</li>
 
   <li>Joining COST Action ROAR-NET as work group leader on optimisation under uncertainty.</li>
-  <li>Giving tutorial on runtime analysis of population-based evolutionary algorithms
-    at GECCO 2023.</li>
-  
-  <li>Alistair Benford joined the group as a Research Fellow in
-  February 2023. He is funded by the Turing AI Acceleration
-  Fellowship. He was previously a PhD student in the Probability and
-  Combinatorics group in Birmingham</li>
-  
-  <li>Our group presented four papers and one tutorial at the GECCO 2022 conference in
-    Boston.</li>
-       
-  <li>Mario Hevia Fajardo joined the group as a Research
-  Fellow in February 2022. He is funded by the Turing AI Acceleration Fellowship.. He was previously a PhD student at the University of Sheffield.</li>
-  <li>Co-organising with Benjamin Doerr the <a href="https://www.cs.bham.ac.uk/~lehrepk/thrash2021">2021 ThRaSh Seminar series</a>.</li>
-
-  <li><a href="https://link.springer.com/journal/453/topicalCollection/AC_a70ed9ca46d75a7f9d099ebbfd3561c4">GECCO Theory Track 2018 special issue of Algorithmica</a> guest-edited with Anne Auger has appeared online.</li>
-
-  <li>Giving IEEE CIS Webinar on Self-adaptation</li>
-
-  <li>Giving an tutorial on <a href="gecco2021">Runtime Analysis of
-  Evolutionary Algorithms</a> at GECCO 2021 with Pietro
-  S. Oliveto.</li>  
-
-  <li>Chairing the GECCO 2019 Theory Track with Johannes Lengler.</li>
-
-  <li>Giving keynote on "Algorithmic Perspectives on Evolution" at the OPTA 2018 conference in Omsk, Russia.</li>
-
-  <li>Paper on level-based analysis accepted for publication in IEEE
-  Transactions on Evolutionary Computation</li>
-    
-  <li>I joined the School of Computer Science at the University
-    of Birmingham as a Senior Lecturer from January 2017.</li>
 </ul>
 
 <!--  <li>Member of organizing committee of GECCO 2016, Denver, CO, USA.</li>   -->
