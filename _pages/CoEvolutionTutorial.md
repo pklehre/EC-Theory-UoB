@@ -1,13 +1,15 @@
 ---
 layout: page
-title: Tutorial on Theory of Competitive Co-evolutionary Algorithms
+title: Co-Evolution Tutorial
+description: Tutorial on Theory of Competitive Co-evolutionary Algorithms
 permalink: /CoEvolutionTutorial/
-subtitle: Tutorial on Theory of Competitive Co-evolutionary Algorithms
 news: false  # includes a list of news items
 latest_posts: false  # includes a list of the newest posts
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
+
+(Presented at GECCO 2026 in Costa Rica.)
 
 **Authors**
 
