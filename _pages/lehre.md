@@ -57,11 +57,9 @@ February 19th 2016. Please contact me before submitting your application.
 -->
 
 <h2>Teaching</h2>
-(I had no teaching/admin duties 2020-2025 due to my Turing AI fellowship.)
 <ul>
   <li>Evolutionary Computation (2026, co-taught with Shan He)</li>
-  <li>Neural Computation (Autumn 2020, co-taught with Jinming Duan,
-    Yunwen Lei and Shan He)</li>
+  <li>Neural Computation (Autumn 2020, co-taught with Jinming Duan, Yunwen Lei and Shan He)</li>
   <li>Nature Inspired Search and Optimisation (Spring 2020, co-taught with Shan He)</li>
 </ul>
 
@@ -87,7 +85,7 @@ February 19th 2016. Please contact me before submitting your application.
 <h2>Current Activities and News</h2>
 
 <ul>
-  <li>GECCO 2026 tutorial on theory of co-evolutionary algorithms with Alistair Benford accepted </li>
+  <li>GECCO 2026 tutorial on theory of co-evolutionary algorithms with Alistair Benford <a href="https://pklehre.github.io/EC-Theory-UoB/assets/pdf/gecco2026-coevolution-tutorial.pdf">slides</a> </li>
   <li>PPSN 2026 tutorial on runtime analysis of population-baseed algorithms on complex fitness landscapes accepted</li>
   <li>GECCO paper with ROAR-NET WG4 theory group accepted</li>  
   <li>GECCO paper with Alistair Benford on theory of co-evolutionary algorithms accepted</li>
