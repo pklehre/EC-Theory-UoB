@@ -7,4 +7,5 @@ nav: true
 nav_order: 4
 ---
 
+- [Tutorial on Runtime Analysis of Evolutionary Algorithms on Complex Fitness Landscapes](../ComplexLandscapesTutorial) (PPSN 2026)
 - [Tutorial on Theory of Competitive Co-evolutionary Algorithms](../CoEvolutionTutorial/) (GECCO 2026)
