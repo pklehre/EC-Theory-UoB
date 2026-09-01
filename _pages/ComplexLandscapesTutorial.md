@@ -24,7 +24,8 @@ social: false  # includes social icons at the bottom of the page
 
  - [Algorithmica SLO paper](https://link.springer.com/article/10.1007/s00453-025-01359-z)
  - [TELO MOEA paper](https://dl.acm.org/doi/10.1145/3732793)
-   
+ - [Algorithmica paper on MOEA black box](https://link.springer.com/article/10.1007/s00453-026-01403-6)
+
 **Acknowledgements**
 
 Research supported by UKRI/EPSRC
