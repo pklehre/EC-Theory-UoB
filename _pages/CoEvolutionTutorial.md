@@ -19,6 +19,7 @@ social: false  # includes social icons at the bottom of the page
 
  - [Slides](../assets/pdf/gecco2026-coevolution-tutorial.pdf)
  - [Animations](../blog/2024/coevolutionary-algorithms-tutorial)
+ - [Interactive visualisation of PDCoEA](pdcoea/) (runs in your browser)
  - [Implementation of PDCoEA in Python](https://github.com/pklehre/pdcoea)
 
 **Abstract**

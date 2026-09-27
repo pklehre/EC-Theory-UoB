@@ -1,0 +1,361 @@
+---
+layout: page
+title: PDCoEA visualisation
+description: The Pairwise Dominance Co-evolutionary Algorithm on games that only depend on the number of one-bits, running in your browser (OCaml compiled to WebAssembly).
+permalink: /CoEvolutionTutorial/pdcoea/
+---
+{% raw %}
+<!-- The visualisation as an embeddable fragment. dune wraps it into the
+     standalone page index.html and the Jekyll page jekyll.html. -->
+<div id="pdcoea">
+<style>
+  /* All rules are scoped to #pdcoea so that the page can be embedded in
+     another site. Colours use that site's theme variables (al-folio's
+     --global-*), with fallbacks that the standalone page also defines. */
+  #pdcoea {
+    --bg: var(--global-bg-color, #f6f6f4); --panel: var(--global-card-bg-color, #ffffff);
+    --text: var(--global-text-color, #1d1d1b); --muted: var(--global-text-color-light, #6b6b66);
+    --border: var(--global-divider-color, #dddcd6); --accent: var(--global-theme-color, #1f5ac8);
+    --field: var(--global-bg-color, #f6f6f4);
+    color: var(--text); font-size: 14px; line-height: 1.45;
+  }
+  #pdcoea, #pdcoea * { box-sizing: border-box; }
+  /* Embedded in a site, widen that page's containers (navbar, content and
+     footer alike) so that the three columns have room. */
+  body:has(#pdcoea) .container { max-width: 1560px; }
+  #pdcoea .app-title { font-size: 20px; margin: 0 0 4px; }
+  #pdcoea p.sub { margin: 0 0 16px; color: var(--muted); }
+  /* Description | plot | controls. Below 1200px the description moves
+     under the plot; below 760px everything stacks. */
+  #pdcoea .layout { display: grid; grid-template-columns: minmax(240px, 1fr) minmax(0, 2fr) 260px;
+            grid-template-areas: "desc plot controls"; gap: 16px; align-items: stretch; }
+  #pdcoea #description { grid-area: desc; }
+  /* Panels share the row height; the statistics stay right below the plot. */
+  #pdcoea #plot-panel { grid-area: plot; }
+  #pdcoea #controls { grid-area: controls; }
+  @media (max-width: 1200px) {
+    #pdcoea .layout { grid-template-columns: minmax(0, 1fr) 260px; grid-template-areas: "plot controls" "desc desc"; }
+  }
+  @media (max-width: 760px) {
+    #pdcoea .layout { grid-template-columns: 1fr; grid-template-areas: "plot" "controls" "desc"; }
+  }
+  #pdcoea #description h2 { font-size: 15px; margin: 0 0 8px; }
+  #pdcoea #description p { margin: 10px 0 0; }
+  #pdcoea #description .note, #pdcoea #description .cite { font-size: 12px; color: var(--muted); }
+  #pdcoea #description a { color: var(--accent); }
+  #pdcoea #description a.pdf { color: var(--muted); display: inline-block; vertical-align: -6px; margin-left: 4px; }
+  #pdcoea #description a.pdf:hover { color: var(--text); }
+  #pdcoea .bib { position: relative; margin-top: 8px; }
+  #pdcoea .bib pre { margin: 0; padding: 8px; font-size: 11px; line-height: 1.4; background: var(--field); color: var(--text);
+             border: 1px solid var(--border); border-radius: 6px; white-space: pre-wrap; overflow-wrap: anywhere; }
+  #pdcoea .bib button { position: absolute; top: 6px; right: 6px; flex: none; padding: 2px 8px; font-size: 11px; }
+  /* QR code: always dark on white so that it scans in dark mode too. */
+  #pdcoea .qr { margin-top: 12px; text-align: center; }
+  #pdcoea #qr { display: inline-block; background: #fff; padding: 6px; border-radius: 6px; line-height: 0; }
+  #pdcoea #qr svg { width: 160px; height: 160px; }
+  #pdcoea .qr-caption { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  /* Pseudo-code laid out like algpseudocode: numbered lines, indented blocks. */
+  #pdcoea .algo { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 6px 0; font-size: 13px; }
+  #pdcoea .algo .req { margin: 2px 0; }
+  #pdcoea .algo ol { margin: 4px 0 0; padding-left: 2.2em; }
+  #pdcoea .algo li { margin: 1px 0; }
+  #pdcoea .algo li::marker { font-size: 11px; color: var(--muted); }
+  #pdcoea .algo .i1 { padding-left: 1.2em; } #pdcoea .algo .i2 { padding-left: 2.4em; } #pdcoea .algo .i3 { padding-left: 3.6em; }
+  #pdcoea .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+  /* 4:3 plot sized by its column, but never taller than the window. */
+  #pdcoea canvas { width: 100%; aspect-ratio: 4 / 3; max-height: calc(100vh - 190px); display: block; border-radius: 4px; }
+  #pdcoea figure { margin: 0; min-width: 0; }
+  #pdcoea figcaption { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+  #pdcoea canvas#surface { cursor: grab; touch-action: none; }
+  #pdcoea canvas#surface:active { cursor: grabbing; }
+  #pdcoea .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 10px; }
+  #pdcoea .stats div { font-size: 12px; color: var(--muted); }
+  #pdcoea .stats b { display: block; font-size: 15px; color: var(--text); font-variant-numeric: tabular-nums; }
+  /* Reset what a host stylesheet (e.g. Bootstrap) sets on form elements. */
+  #pdcoea fieldset { border: 0; padding: 0; margin: 0 0 12px; min-width: 0; }
+  #pdcoea legend { font-size: inherit; font-weight: 600; margin-bottom: 6px; padding: 0; width: auto; }
+  #pdcoea label { display: grid; grid-template-columns: 1fr 90px; align-items: center; gap: 8px; margin: 4px 0; font-weight: normal; }
+  #pdcoea label.wide { grid-template-columns: auto 1fr; }
+  #pdcoea label.full { grid-template-columns: 1fr; }
+  #pdcoea code { font-size: 12px; color: var(--muted); background: none; padding: 0; }
+  #pdcoea label.slider { grid-template-columns: 1fr; gap: 2px; }
+  #pdcoea label.slider span { display: flex; gap: 6px; align-items: baseline; }
+  #pdcoea label.slider output { margin-left: auto; font-variant-numeric: tabular-nums; }
+  #pdcoea input[type=range] { padding: 0; border: 0; background: none; accent-color: var(--accent); }
+  #pdcoea input, #pdcoea select { width: 100%; font: inherit; padding: 3px 6px; background: var(--field); color: var(--text);
+                  border: 1px solid var(--border); border-radius: 4px; height: auto; }
+  #pdcoea input[type=checkbox] { width: auto; justify-self: end; }
+  #pdcoea .buttons { display: flex; gap: 8px; margin-bottom: 12px; }
+  #pdcoea button { flex: 1; font: inherit; padding: 6px 0; border-radius: 6px; cursor: pointer;
+           border: 1px solid var(--border); background: var(--field); color: var(--text); }
+  #pdcoea button#run { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+  #pdcoea .foot { font-size: 12px; color: var(--muted); margin-top: 8px; }
+</style>
+<!-- MathJax macros used below (works with the host page's MathJax). -->
+<span hidden>\(\newcommand{\unif}{\operatorname{Unif}}\newcommand{\bilinear}{\mathrm{B}{\small\mathrm{ILINEAR}}}\newcommand{\diagonal}{\mathrm{D}{\small\mathrm{IAGONAL}}}\)</span>
+  <h2 id="app-title" class="app-title">PDCoEA on Bilinear</h2>
+  <p class="sub">Uniformly sampled (|x|, |y|) pairs from the predator and prey populations (blue) on the payoff surface, the trajectory of their means on the floor (grey), and the equilibrium and reference lines of the game (red).</p>
+  <div class="layout">
+    <aside class="panel" id="description">
+      <!-- Algorithm 2 and Definitions 4 and eq. (1) in P. K. Lehre,
+           Algorithmica 86(7), 2024 (bilinear-algorithmica.tex). -->
+      <h2>Pairwise Dominance CoEA (PDCoEA)</h2>
+      <div class="algo">
+        <div class="req"><b>Require:</b> Min-max-objective function \(g:\{0,1\}^n\times\{0,1\}^n\rightarrow\mathbb{R}\).</div>
+        <div class="req"><b>Require:</b> Population size \(\lambda\in\mathbb{N}\) and mutation rate \(\chi\in (0,n]\)</div>
+        <ol>
+          <li><b>for</b> \(i\in [\lambda]\) <b>do</b></li>
+          <li class="i1">Sample \(P_0(i)\sim\unif(\{0,1\}^n)\)</li>
+          <li class="i1">Sample \(Q_0(i)\sim\unif(\{0,1\}^n)\)</li>
+          <li><b>end for</b></li>
+          <li><b>for</b> \(t\in\mathbb{N}\) until termination criterion met <b>do</b></li>
+          <li class="i1"><b>for</b> \(i\in[\lambda]\) <b>do</b></li>
+          <li class="i2">Sample \((x_1,y_1)\sim \unif(P_t\times Q_t)\)</li>
+          <li class="i2">Sample \((x_2,y_2)\sim \unif(P_t\times Q_t)\)</li>
+          <li class="i2"><b>if</b> \((x_1,y_1)\succeq_g (x_2,y_2)\) <b>then</b></li>
+          <li class="i3">\((x,y):= (x_1,y_1)\)</li>
+          <li class="i2"><b>else</b></li>
+          <li class="i3">\((x,y) := (x_2,y_2)\)</li>
+          <li class="i2"><b>end if</b></li>
+          <li class="i2">Obtain \(x'\) by flipping each bit in \(x\) with probability \(\chi/n\).</li>
+          <li class="i2">Obtain \(y'\) by flipping each bit in \(y\) with probability \(\chi/n\).</li>
+          <li class="i2">Set \(P_{t+1}(i):=x'\) and \(Q_{t+1}(i):=y'\).</li>
+          <li class="i1"><b>end for</b></li>
+          <li><b>end for</b></li>
+        </ol>
+      </div>
+      <p><b>Dominance.</b> Given \(g:\mathcal{X}\times\mathcal{Y}\rightarrow\mathbb{R}\) and two pairs
+        \((x_1,y_1),(x_2,y_2)\in\mathcal{X}\times\mathcal{Y}\), we say that \((x_1,y_1)\) dominates
+        \((x_2,y_2)\) wrt \(g\), denoted \((x_1,y_1)\succeq_g (x_2,y_2)\), if and only if
+        \[g(x_1,y_2) \geq g(x_1,y_1) \geq g(x_2,y_1).\]</p>
+      <div class="game-desc" data-game="discr_bilinear">
+      <p><b>Bilinear.</b> For \(\alpha,\beta\in[0,1]\),
+        \[\bilinear(x,y) := \|y\|(\|x\|-\beta n)-\alpha n \|x\|,\]
+        where \(\|z\|:=\sum_{i=1}^n z_i\). The plot shows \(\bilinear/n^2\), and the
+        red ring marks \(\|x\|=\beta n\), \(\|y\|=\alpha n\), where \(\nabla g=0\).</p>
+      </div>
+      <div class="game-desc" data-game="general_diagonal_test" hidden>
+      <p><b>Diagonal</b> [Lehre and Lin 2025]. Given \(n\in\mathbb{N}\), \(\mathcal{X}=\mathcal{Y}=\{0,1\}^n\),
+        the payoff function \(\diagonal:\mathcal{X}\times\mathcal{Y}\rightarrow\{-1,1\}\) is
+        \[\diagonal(x,y) := \begin{cases} 1 & |y|_1\leq |x|_1 \\ -1 & \text{otherwise}\end{cases}.\]
+        \((x^*,y^*)=(1^n,1^n)\) is the unique maximin optimum (red ring).</p>
+      <p class="note">The plot uses eclib's <code>general_diagonal_test</code>: payoff 1 if
+        \(\|y\|\leq c\|x\|+\alpha n\) with \(c=(1-\alpha)/(1-\beta)\), and 0 otherwise. For
+        \(\alpha=\beta=0\) this is \(\diagonal\) with \(-1\) replaced by 0, which preserves every
+        comparison in \(\succeq_g\), so PDCoEA behaves identically.</p>
+      <p class="cite">P. K. Lehre and S. Lin. Towards Runtime Analysis of Population-Based
+        Co-evolutionary Algorithms on Sparse Binary Zero-Sum Game. In <i>Proceedings of the 39th AAAI
+        Conference on Artificial Intelligence (AAAI)</i>, 2025.</p>
+      <div class="bib">
+        <button type="button">Copy</button>
+        <pre>@inproceedings{lin2025aaai,
+  author = {Lehre, Per Kristian and Lin, Shishen},
+  title = {Towards Runtime Analysis of Population-Based Co-evolutionary Algorithms on Sparse Binary Zero-Sum Game},
+  booktitle = {Proceedings of the 39th AAAI Conference on Artificial Intelligence (AAAI)},
+  year = {2025},
+  address = {Philadelphia, Pennsylvania, USA},
+}</pre>
+      </div>
+      </div>
+      <div class="game-desc" data-game="diagonal_tri_test" hidden>
+      <p><b>Diagonal, three-valued.</b> eclib's <code>general_diagonal_test</code> with
+        <code>is_three_valued</code>: with \(c=(1-\alpha)/(1-\beta)\), the predator payoff is 1 if
+        \(\|y\|\lt  c\|x\|+\alpha n\), 0 if \(\|y\|= c\|x\|+\alpha n\), and \(-1\) otherwise.
+        The red ring marks \((1^n,1^n)\).</p>
+      </div>
+      <div class="game-desc" data-game="discr_maximinhill" hidden>
+      <p><b>Maximin hill.</b> With \(x=\|x\|/n\) and \(y=\|y\|/n\), \[g(x,y) := |\alpha-y|\,|\beta-x| - \bigl(|\beta-x| - |\alpha-y|\bigr).\] The red ring marks \(\|x\|=\beta n\), \(\|y\|=\alpha n\).</p>
+      <p class="note">eclib <code>discr_maximinhill</code> (<code>lib/coproblem.ml</code>).</p>
+      </div>
+      <div class="game-desc" data-game="discr_double_bilinear" hidden>
+      <p><b>Double bilinear.</b> With \(x=\|x\|/n\) and \(y=\|y\|/n\), \[g(x,y) := \begin{cases} \gamma\bigl(\alpha(1-x/\beta) + y(x/\beta-\tfrac12)\bigr) & x\lt \beta \\ \frac{(x-\beta)(\alpha-y)}{1-\beta} + \frac{y}{2} & \text{otherwise.}\end{cases}\] The optimum is \(y=\alpha\) and \(x=\beta/2\) if \(\gamma>1\), \(x=3\beta/2\) if \(\gamma\lt 1\), or both if \(\gamma=1\) (red rings, where inside the square).</p>
+      <p class="note">eclib <code>discr_double_bilinear</code> (<code>lib/coproblem.ml</code>).</p>
+      </div>
+      <div class="game-desc" data-game="dgsz2022_f1" hidden>
+      <p><b>DGSZ 2022 f1.</b> With \(\theta=2\|x\|/n-1\) and \(\omega=2\|y\|/n-1\), \[g := -4\Bigl(\theta^2-\bigl(\omega-(3\theta+\tfrac{\theta^3}{20})\bigr)^2-\tfrac{\omega^4}{10}\Bigr)e^{-(\theta^2+\omega^2)/100}.\] eclib defines no optimum or regret.</p>
+      <p class="note">eclib <code>dgsz2022_f1</code> (<code>lib/coproblem.ml</code>).</p>
+      </div>
+      <div class="game-desc" data-game="dgsz2022_f2" hidden>
+      <p><b>DGSZ 2022 f2.</b> With \(\theta=2\|x\|/n-1\), \(\omega=2\|y\|/n-1\), and \(S(t)=0\) for \(t\le0\), \(3t^2-2t^3\) for \(0\lt t\le1\), 1 otherwise, \[g := \theta\omega+\frac{\omega^2}{2}-\frac{0.1}{2}\,S(\theta^2+\omega^2)\,\omega^2.\] The optimum is \(\theta=\omega=0\), i.e. \(\|x\|=\|y\|=n/2\) (red ring).</p>
+      <p class="note">eclib <code>dgsz2022_f2</code> (<code>lib/coproblem.ml</code>).</p>
+      </div>
+      <div class="game-desc" data-game="monkey_saddle" hidden>
+      <p><b>Monkey saddle.</b> With \(x=\|x\|/n\) and \(y=\|y\|/n\), \[g(x,y) := (y-\alpha)^3-\theta\,(y-\alpha)(x-\beta)^2.\] eclib defines no optimum.</p>
+      <p class="note">eclib <code>monkey_saddle</code> (<code>lib/maximin_fitness.ml</code>).</p>
+      </div>
+      <div class="game-desc" data-game="handkerchief" hidden>
+      <p><b>Handkerchief.</b> With \(x=\|x\|/n\) and \(y=\|y\|/n\), \(a=6(y-\alpha)\) and \(b=6(x-\beta)\), \[g(x,y) := \frac{a^3}{3}+2h\,a^2+h\,a\,b^2-2b^2.\] eclib defines no optimum.</p>
+      <p class="note">eclib <code>handkerchief</code> (<code>lib/maximin_fitness.ml</code>).</p>
+      </div>
+      <div class="game-desc" data-game="mexican_hat" hidden>
+      <p><b>Mexican hat.</b> With \(x=\|x\|/n\) and \(y=\|y\|/n\), and \(r=w\sqrt{(x-\beta)^2+(y-\alpha)^2}\), \[g(x,y) := \frac{\sin r}{r}.\] At \(r=0\) the plot uses the limit 1, where eclib gives NaN. eclib defines no optimum.</p>
+      <p class="note">eclib <code>mexican_hat</code> (<code>lib/maximin_fitness.ml</code>).</p>
+      </div>
+      <div class="game-desc" data-game="grimmer2020" hidden>
+      <p><b>Grimmer 2020.</b> With \(x=\|x\|/n\) and \(y=\|y\|/n\), \(f(t)=(t-3)(t-1)(t+1)(t+3)\), \(u=4(x-1)\) and \(v=4(y-1)\), \[g(x,y) := f(v)-f(u)-A\,u\,v.\] eclib defines no optimum.</p>
+      <p class="note">eclib <code>grimmer2020</code> (<code>lib/maximin_fitness.ml</code>).</p>
+      </div>
+      <div class="game-desc" data-game="diagonal_qd_test" hidden>
+      <p><b>Quadratic diagonal.</b> \[g(x,y) := \begin{cases}1 & \|y\|\le c\,(\|x\|-n/2)^2+n/2\\ 0 & \text{otherwise.}\end{cases}\] The regret is \(2n-\|x\|-\|y\|\), so the red ring marks \((1^n,1^n)\).</p>
+      <p class="note">eclib <code>diagonal_qd_test</code> (<code>lib/diagonal_test_quadratic.ml</code>).</p>
+      </div>
+      <div class="game-desc" data-game="diagonal_sigmoid_test" hidden>
+      <p><b>Sigmoid diagonal.</b> \(g(x,y)=1\) if \(\|y\|\le b(\|x\|)\) and 0 otherwise, where \(b(0)=0\), \(b(n)=n\), and \[b(t) := \frac{n}{1+e^{-s(t-n/2)}}\quad\text{otherwise.}\] The red ring marks \((1^n,1^n)\).</p>
+      <p class="note">eclib <code>diagonal_sigmoid_test</code> (<code>lib/diagonal_test_sigmoid.ml</code>).</p>
+      </div>
+      <div class="game-desc" data-game="jump_diagonal_test" hidden>
+      <p><b>Jump diagonal.</b> \[g(x,y) := \begin{cases}1 & \|x\|=n\\ [\|y\|\le\|x\|] & \|x\|\le n-k\\ [\|y\|\le 2(n-k)-\|x\|] & \text{otherwise,}\end{cases}\] where \([\cdot]\) is 1 if the condition holds and 0 otherwise (<code>naive_jump</code>). The red ring marks \((1^n,1^n)\).</p>
+      <p class="note">eclib <code>jump_diagonal_test</code> (<code>lib/diagonal_test_jump.ml</code>).</p>
+      </div>
+      <div class="game-desc" data-game="trap_diagonal_test" hidden>
+      <p><b>Trap diagonal.</b> With \(h=n/2-b(\|x\|-n/2)\), \[g(x,y) := \begin{cases}1 & \|x\|\ge n-k \text{ and } \|y\|\le h\\ [\|y\|\ge h] & \|x\|>n/2 \text{ and } \|y\|\le\|x\|\\ 0 & \text{otherwise.}\end{cases}\] The red ring marks \((1^n,1^n)\).</p>
+      <p class="note">eclib <code>trap_diagonal_test</code> (<code>lib/diagonal_test_trap.ml</code>).</p>
+      </div>
+      <div class="game-desc" data-game="plateaus_test" hidden>
+      <p><b>Plateaus.</b> \(g(x,y)=1\) if \(\|y\|\le p(\|x\|)\) and 0 otherwise, where \[p(t) := \begin{cases}\frac{n}{n-2d}\,t & t\lt n/2-d\\ n/2 & t\lt n/2+d\\ \frac{n}{n-2d}(t-n)+n & \text{otherwise.}\end{cases}\] eclib defines no regret; the red ring marks \((1^n,1^n)\).</p>
+      <p class="note">eclib <code>plateaus_test</code> (<code>lib/plateaus_test.ml</code>).</p>
+      </div>
+      <div class="game-desc" data-game="cantor_test" hidden>
+      <p><b>Cantor.</b> \(g(x,y)=1\) if \(\|y\|\le n\,C_\gamma(\|x\|/n)\) and 0 otherwise, with the Cantor function to depth \(\gamma\): \(C_0(t)=t\) and \[C_m(t) := \begin{cases}C_{m-1}(3t)/2 & t\lt 1/3\\ 1/2 & t\lt 2/3\\ 1/2+C_{m-1}(3t-2)/2 & \text{otherwise.}\end{cases}\] eclib defines no regret; the red ring marks \((1^n,1^n)\).</p>
+      <p class="note">eclib <code>cantor_test</code> (<code>lib/cantor_test.ml</code>).</p>
+      </div>
+      <div class="game-desc" data-game="triangle_test" hidden>
+      <p><b>Triangle.</b> With \(f_1(t)=\frac{\beta-1}{\alpha}t+n\), \(f_2(t)=\frac{\beta-1}{\alpha-1}(t-n)+n\), \(f_3(t)=\frac{\beta}{\alpha-1}(t-n)\) and \(f_4(t)=\frac{\beta}{\alpha}t\), \(g(x,y)=1\) if \(\|y\|\ge\max(f_1,f_2)(\|x\|)\) or \(\|y\|\le\min(f_3,f_4)(\|x\|)\), and 0 otherwise. The red ring marks the optimum \((\alpha n,\beta n)\).</p>
+      <p class="note">eclib <code>triangle_test</code> (<code>lib/triangle_test.ml</code>).</p>
+      </div>
+      <div class="game-desc" data-game="mbjr_2024" hidden>
+      <p><b>MBJR 2024.</b> \[g(x,y) := \begin{cases}2\delta_{\min} & \|x\|=n,\ \|y\|=n-1\\ 2\delta_1 & \|x\|=n,\ \|y\|\lt n-1\\ -2\delta_{\min} & \|y\|=n,\ \|x\|=n-1\\ -2\delta_1 & \|y\|=n,\ \|x\|\lt n-1\\ \operatorname{sign}(\|x\|-\|y\|) & \text{otherwise.}\end{cases}\] The red ring marks the optimum \((1^n,1^n)\).</p>
+      <p class="note">eclib <code>mbjr_2024</code> (<code>lib/coproblem.ml</code>).</p>
+      </div>
+      <p class="note">Initialisation is uniform as in lines 1–4, or with a fixed number of one-bits
+        (<i>Init</i> controls).</p>
+      <p class="cite">P. K. Lehre. Runtime Analysis of Competitive Co-evolutionary Algorithms for
+        Maximin Optimisation of a Bilinear Function. <i>Algorithmica</i> 86(7):2352–2392, 2024.
+        <a href="https://doi.org/10.1007/s00453-024-01218-3">doi:10.1007/s00453-024-01218-3</a>
+        <a class="pdf" href="https://link.springer.com/content/pdf/10.1007/s00453-024-01218-3.pdf"
+           title="PDF (open access, CC BY 4.0)" aria-label="PDF of the paper (open access)"><svg viewBox="0 0 24 28" width="20" height="23" aria-hidden="true">
+          <path d="M3 1h12l6 6v19a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" fill="#fff" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M15 1v6h6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="0" y="13" width="20" height="9" rx="1.5" fill="#d62728"/>
+          <text x="10" y="20.2" text-anchor="middle" font-family="system-ui, sans-serif" font-size="7" font-weight="700" fill="#fff">PDF</text>
+        </svg></a></p>
+      <div class="bib">
+        <button type="button">Copy</button>
+        <pre>@article{lehre_bilinear_algorithmica,
+  title = {Runtime {Analysis} of {Competitive} {Co}-evolutionary {Algorithms} for {Maximin} {Optimisation} of a {Bilinear} {Function}},
+  author = {Lehre, Per Kristian},
+  journal = {Algorithmica},
+  volume = {86},
+  number = {7},
+  pages = {2352--2392},
+  month = jul,
+  year = {2024},
+  issn = {1432-0541},
+  doi = {10.1007/s00453-024-01218-3},
+  url = {https://doi.org/10.1007/s00453-024-01218-3},
+}</pre>
+      </div>
+    </aside>
+    <div class="panel" id="plot-panel">
+      <figure><figcaption id="caption">Predator payoff xy − αx − βy · drag to rotate, scroll to zoom, double-click to reset</figcaption><canvas id="surface"></canvas></figure>
+      <div class="stats">
+        <div>Generation<b id="generation">0</b></div>
+        <div>Evaluations<b id="fevals">0</b></div>
+        <div>Mean regret<b id="regret">–</b></div>
+        <div>Mean (|x|, |y|)<b id="mean">–</b></div>
+      </div>
+    </div>
+    <div class="panel" id="controls">
+      <div class="buttons">
+        <button id="run">Run</button><button id="step">Step</button><button id="reset">Reset</button>
+      </div>
+      <fieldset>
+        <legend>Game</legend>
+        <label class="full"><select id="game" aria-label="Game">
+          <optgroup label="Bilinear-type">
+            <option value="discr_bilinear">Bilinear</option>
+            <option value="discr_maximinhill">Maximin hill</option>
+            <option value="discr_double_bilinear">Double bilinear</option>
+            <option value="dgsz2022_f1">DGSZ 2022 f1</option>
+            <option value="dgsz2022_f2">DGSZ 2022 f2</option>
+            <option value="monkey_saddle">Monkey saddle</option>
+            <option value="handkerchief">Handkerchief</option>
+            <option value="mexican_hat">Mexican hat</option>
+            <option value="grimmer2020">Grimmer 2020</option>
+          </optgroup>
+          <optgroup label="Test-based (binary)">
+            <option value="general_diagonal_test">Diagonal</option>
+            <option value="diagonal_tri_test">Diagonal (three-valued)</option>
+            <option value="diagonal_qd_test">Quadratic diagonal</option>
+            <option value="diagonal_sigmoid_test">Sigmoid diagonal</option>
+            <option value="jump_diagonal_test">Jump diagonal</option>
+            <option value="trap_diagonal_test">Trap diagonal</option>
+            <option value="plateaus_test">Plateaus</option>
+            <option value="cantor_test">Cantor</option>
+            <option value="triangle_test">Triangle</option>
+            <option value="mbjr_2024">MBJR 2024</option>
+          </optgroup></select></label>
+        <label><span>n <code>n</code></span><input id="n" type="number" value="100" min="2"></label>
+        <div id="game_params"></div>
+      </fieldset>
+      <fieldset>
+        <legend>PDCoEA</legend>
+        <label><span>λ <code>lambda</code></span><input id="lambda" type="number" value="300" min="2"></label>
+        <label><span>χ <code>chi</code></span><input id="chi" type="number" value="0.3" step="0.1" min="0"></label>
+        <label class="wide"><span>Initialisation</span><select id="init">
+          <option value="level">fixed |x|, |y|</option>
+          <option value="uniform">uniform</option></select></label>
+        <label><span>Init |x|/n <code>pred</code></span><input id="init_pred" type="number" value="0.9" step="0.05" min="0" max="1"></label>
+        <label><span>Init |y|/n <code>prey</code></span><input id="init_prey" type="number" value="0.9" step="0.05" min="0" max="1"></label>
+      </fieldset>
+      <fieldset>
+        <legend>Display</legend>
+        <label><span>Generations / frame</span><input id="gens_per_frame" type="number" value="1" min="1"></label>
+        <label><span>Samples <code>num_samples</code></span><input id="num_samples" type="number" value="100" min="1"></label>
+        <label><span>Dot size</span><input id="dot_size" type="number" value="1" step="0.5" min="0.5"></label>
+        <label><span>Jitter</span><input id="jitter" type="range" value="0.012" step="0.002" min="0" max="0.05"></label>
+        <label><span>Surface height</span><input id="z_height" type="range" value="0.25" step="0.05" min="0.05" max="1"></label>
+      </fieldset>
+      <div class="foot">The sliders under Game change the game live; choosing another game, or changing n or an algorithm parameter, restarts the run. Backend: <span id="backend">…</span></div>
+      <div class="qr">
+        <div id="qr"></div>
+        <div class="qr-caption">Scan to open this page</div>
+      </div>
+    </div>
+  </div>
+<script defer src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script>
+  // Query parameters override inputs, e.g. ?game=cantor_test&n=100&chi=0.5
+  // (the simulation starts running unless ?paused is given; ?js uses the
+  // JavaScript build instead of wasm).
+  const q = new URLSearchParams(location.search);
+  for (const [k, v] of q) {
+    const e = document.getElementById(k);
+    if (e && e.type === "checkbox") e.checked = v !== "false";
+    else if (e && (e.tagName === "INPUT" || e.tagName === "SELECT")) e.value = v;
+  }
+  if (!q.has("paused")) window.__ocamlec_autorun = true;
+  window.__query = Object.fromEntries(q); // read by the game-parameter sliders
+  const useJs = q.has("js");
+  // QR code for the current URL, and copying the BibTeX entry.
+  window.addEventListener("load", () => {
+    try {
+      const qr = qrcode(0, "M");
+      qr.addData(location.href);
+      qr.make();
+      document.getElementById("qr").innerHTML = qr.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+    } catch (e) { document.querySelector(".qr").hidden = true; }
+  });
+  for (const b of document.querySelectorAll(".bib button")) b.addEventListener("click", async () => {
+    const pre = b.parentElement.querySelector("pre");
+    try { await navigator.clipboard.writeText(pre.textContent); b.textContent = "Copied"; }
+    catch (e) { getSelection().selectAllChildren(pre); b.textContent = "Press ⌘C"; }
+    setTimeout(() => { b.textContent = "Copy"; }, 1500);
+  });
+  if (!useJs) window.__ocamlec_wasm = true;
+  const s = document.createElement("script");
+  s.src = useJs ? "main.bc.js" : "main.bc.wasm.js";
+  document.body.appendChild(s);
+</script>
+</div>
+{% endraw %}

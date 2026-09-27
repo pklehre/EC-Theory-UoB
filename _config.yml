@@ -245,7 +245,7 @@ defaults:
 # -----------------------------------------------------------------------------
 
 jekyll-minifier:
-  exclude: ['robots.txt']
+  exclude: ['robots.txt', 'CoEvolutionTutorial/pdcoea/*']  # prebuilt wasm_of_ocaml output
   uglifier_args:
     harmony: true
 
