@@ -194,6 +194,7 @@ https://pklehre.github.io/EC-Theory-UoB -->
   body:has(#pdcoea) .container { max-width: 1560px; }
   #pdcoea .app-title { font-size: 20px; margin: 0 0 4px; }
   #pdcoea p.sub { margin: 0 0 16px; color: var(--muted); }
+  #pdcoea p.sub a { color: var(--accent); }
   /* Description | plot | controls. Below 1200px the description moves
      under the plot; below 760px everything stacks. */
   #pdcoea .layout { display: grid; grid-template-columns: minmax(240px, 1fr) minmax(0, 2fr) 260px;
@@ -263,7 +264,7 @@ https://pklehre.github.io/EC-Theory-UoB -->
 <!-- MathJax macros used below (works with the host page's MathJax). -->
 <span hidden>\(\newcommand{\unif}{\operatorname{Unif}}\newcommand{\bilinear}{\mathrm{B}{\small\mathrm{ILINEAR}}}\newcommand{\diagonal}{\mathrm{D}{\small\mathrm{IAGONAL}}}\)</span>
   <h2 id="app-title" class="app-title">PDCoEA on Bilinear</h2>
-  <p class="sub">Uniformly sampled (|x|, |y|) pairs from the predator and prey populations (blue) on the payoff surface, the trajectory of their means on the floor (grey), and the equilibrium and reference lines of the game (red).</p>
+  <p class="sub">Uniformly sampled (|x|, |y|) pairs from the predator and prey populations (blue) on the payoff surface, the trajectory of their means on the floor (grey), and the equilibrium and reference lines of the game (red). Code: <a href="https://github.com/pklehre/pdcoea" rel="external nofollow noopener" target="_blank">PDCoEA on GitHub</a> (Python).</p>
   <div class="layout">
     <aside class="panel" id="description">
       <!-- Algorithm 2 and Definitions 4 and eq. (1) in P. K. Lehre,
