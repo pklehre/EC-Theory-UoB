@@ -155,7 +155,6 @@ February 19th 2016. Please contact me before submitting your application.
 <li>Alistair Benford (PostDoc, started Feb 2023)</li>
 <li>Mario Hevia Fajardo (PostDoc, started Feb 2022)</li>
 <li>Shishen Lin (PhD student, first supervisor, since Sept 2021)</li>
-<li>Sarah Carmesin (PhD student, second supervisor, since Oct 2021)</li>
 <li>Zimin Liang (PhD student, second supervisor, since Sep 2021)</li>
 <li>Tuo Zhang (PhD student, second supervisor, Since Jan 2023)</li>
 <li>Efstratios Palias (PhD student, second supervisor, since Sept 2020)</li>
